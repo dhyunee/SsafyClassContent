@@ -35,7 +35,7 @@ public class Test {
 
 	}
 
-	static class Myclass {
+	static class Myclass implements Comparable<Myclass> {
 		int y, x, c;
 
 		public Myclass(int y, int x, int c) {
@@ -63,6 +63,14 @@ public class Test {
 		@Override
 		public int hashCode() {
 			return Objects.hash(this.y, this.x, this.c);
+		}
+
+		@Override
+		public int compareTo(Myclass o) {
+			if(this.y==o.y) {
+				if(this.x==o.x)return this.c.compareTo(o.c);
+				return this.x-
+			}
 		}
 
 	}
