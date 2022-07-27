@@ -16,6 +16,11 @@ public class LambdaExpressionTest {
 				int n1 = 10, n2 = 20;
 				return n1 + n2;
 			});
+			UseFuncIF.exec2(() -> sm1());
+		}
+		{
+			UseFuncIF.exec3((n) -> "입력값에 10을 더하면: " + (n + 10));
+			UseFuncIF.exec3(n -> "입력값에 10을 더하면: " + (n + 10));// 하나일때만 괄호 뺼 수 있음
 		}
 	}
 
@@ -27,7 +32,16 @@ public class LambdaExpressionTest {
 	static interface FuncIF2 {
 		int m();
 	}// 파라미터X, 리턴 int
-		// 누군가가 바로 나다.(user)
+
+	static interface FuncIF3 {
+		String m(int n);
+	}// 파라미터 O,리턴 String
+
+	static int sm1() {
+		return 1;
+	}
+
+	// 누군가가 바로 나다.(user)
 
 	static class UseFuncIF {
 		public static void exec1(FuncIF1 funcIFImpl) {
@@ -36,6 +50,10 @@ public class LambdaExpressionTest {
 
 		public static void exec2(FuncIF2 funcIFImpl) {
 			System.out.println(funcIFImpl.m());// 리턴 결과 출력
+		}
+
+		public static void exec3(FuncIF3 funcIFImpl) {
+			System.out.println(funcIFImpl.m(5));// 파라미터 및 리턴 결과 출력
 		}
 	}
 
