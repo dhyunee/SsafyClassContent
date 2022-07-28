@@ -1,6 +1,6 @@
 package com.ssafy.live3.generic.wild;
 
-import com.ssafy.live3.generic.box.GenericBox;
+import com.ssafy.live3.generic.box.genericBox;
 
 public class UseWildCardTest2 {
 

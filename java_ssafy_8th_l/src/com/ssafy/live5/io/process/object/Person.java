@@ -20,7 +20,7 @@ public class Person implements Serializable{
         return "[id=" + id + ", pass=" + pass + ", addr=" + addr + "]";
     }
 
-     class Address {
+     class Address implements Serializable {
         private String zipCode;
         private String city;
 
