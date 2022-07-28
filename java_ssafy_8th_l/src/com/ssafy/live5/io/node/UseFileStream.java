@@ -31,11 +31,19 @@ public class UseFileStream {
         // 상대경로의 기준은 java program을 실행하는 위치(소스와 무관)
         //d:\>java -cp .;c:\SSAFY\workspace\java\live\bin com.ssafy.live5.io.node.UseFileStream
         //c:\SSAFY\workspace\java\live\bin>java com.ssafy.live5.io.node.UseFileStream
-        
+       
         // TODO: readme.txt에 해당하는 File 객체를 만들어 보자.
-        //  프로젝트와 무관하게 파일을 찾을
-        //  프로젝트 내부에서 파일을 찾을
-        //  특정 클래스 기준으로 파일을 찾을
+        
+        File readMe=new File("C:\\Users\\admin\\git\\repository6\\java_ssafy_8th_l\\src\\com\\ssafy\\live5\\io\\node\\readme.txt");
+        //  프로젝트와 무관하게 파일을 찾을 때
+        
+        readMe=new File(".\\src\\com\\ssafy\\live5\\io\\node\\readme");
+        readMe=new File(".\\bin\\com\\ssafy\\live5\\io\\node\\readme");		
+        //  프로젝트 내부에서 파일을 찾을 때
+        
+        readMe=new File(UseFileStream.class.getResource("readme.txt").getFile());
+        System.out.println("readme.txt: "+readMe.getCanonicalPath());
+        //  특정 클래스 기준으로 파일을 찾을 때
         // END:
     }
 
@@ -45,6 +53,15 @@ public class UseFileStream {
         File src = new File("c:\\ssafy\\eclipse-jee-2018-09-win32-x86_64.zip");
         File target = new File("c:\\Temp\\eclipse.zip");
         // TODO: bufferSize 크기의 byte []을 이용해서 src를 target에 복사하시오.
+        try (
+        FileInputStream fin=new FileInputStream(src);
+        FileOutputStream fout=new FileOutputStream(target);){
+        	byte[] buffer=new byte [bufferSize];
+        	int read=0;
+        	while((read=fin.read(buffer))>0)fout.write(buffer, 0, read);
+        }catch(IOException e) {
+        	e.printStackTrace();
+        }
         // END:
         return System.currentTimeMillis() - start;
     }

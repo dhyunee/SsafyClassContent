@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 // TODO: Person 을 직렬화 가능하도록 처리하시오.
 @SuppressWarnings("serial")
-public class Person {
+public class Person implements Serializable{
     private String id;
     private transient String pass; // 민감한 데이터
     private Address addr; // has a 관계의 다른 객체
