@@ -13,7 +13,7 @@ public class ObjectStreamTest {
         write();
         read();
     }
-    
+  
     private static File target = new File("c:/Temp/objPerson.dat");
     
     private static void write() {
@@ -26,7 +26,6 @@ public class ObjectStreamTest {
         }catch(IOException e) {
         	e.printStackTrace();
         }
-      
        
         
         // END:
