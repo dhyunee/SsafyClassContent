@@ -24,7 +24,7 @@ public class UseFileStream {
         File temp = new File("c:\\Temp");
         System.out.printf("존재? %b, 디렉토리? %b%n", temp.exists(), temp.isDirectory());
 
-        // 상대경로
+        // 상대경로:현재 위치-->그럼 현재 경로는 어디?
         File current = new File(".");
         System.out.printf("여기는 어디? %s%n", current.getCanonicalPath());
         
