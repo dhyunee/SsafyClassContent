@@ -58,7 +58,6 @@ public class Test {
 //		}
 
 		// 폴더삭제
-
 		{
 			Path folder = Paths.get("C:\\Niotest\\sub");
 			try {
