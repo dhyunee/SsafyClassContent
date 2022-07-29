@@ -51,9 +51,6 @@ public class ApiExplorer {
 		String serviceUrl = "http://apis.data.go.kr/6260000/EnvironmentalNosie/getNoiseInfo";
 		String seriveKey = "=SrtntpXj3c3ur1ed1qBp1pP6hZnss%2FtuiVcEBVNJNFpymvfK0g3JnCpWqyo%2BZpZGhPuC5hiUZpPfKIm4aqLHdQ%3D%3D";
 
-		String serviceUrl1 = "http://apis.data.go.kr/6260000/EnvironmentalNosie";
-		String servicekey = "=SrtntpXj3c3ur1ed1qBp1pP6hZnss%2FtuiVcEBVNJNFpymvfK0g3JnCpWqyo%2BZpZGhPuC5hiUZpPfKIm4aqLHdQ%3D%3D";
-
 		StringBuilder urlBuilder = new StringBuilder(serviceUrl);
 		urlBuilder.append("?" + URLEncoder.encode("serviceKey", "UTF-8") + seriveKey);
 		urlBuilder.append("&" + URLEncoder.encode("numOfROWs", "UTF-8") + "="
