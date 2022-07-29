@@ -13,15 +13,15 @@ public class Test {
 	public static void main(String[] args) {
 		System.out.println(Charset.defaultCharset());
 
-		// ÆÄÀÏ »ı¼º
+		// íŒŒì¼ ìƒì„±
 		{
 			Path file = Paths
 					.get("C:" + File.separator + "Niotest" + File.separator + "temp" + File.separator + "test.txt");
 			try {
 				Files.createFile(file);
-				System.out.println("ÆÄÀÏ »ı¼º");
+				System.out.println("íŒŒì¼ ìƒì„±");
 			} catch (FileAlreadyExistsException e) {
-				System.out.println("ÆÄÀÏÀÌ ÀÌ¹Ì Á¸Àç");
+				System.out.println("íŒŒì¼ì´ ì´ë¯¸ ì¡´ì¬");
 			} catch (IOException e) {
 
 				e.printStackTrace();
@@ -29,27 +29,27 @@ public class Test {
 
 		}
 
-		// Æú´õ »ı¼º
+		// í´ë” ìƒì„±
 		{
 			Path folder = Paths.get("C:\\Niotest\\sub");
 			try {
 				Files.createDirectory(folder);
-				System.out.println("Æú´õ »ı¼º");
+				System.out.println("í´ë” ìƒì„±");
 			} catch (FileAlreadyExistsException e) {
-				System.out.println("Æú´õ°¡ ÀÌ¹Ì Á¸Àç");
+				System.out.println("í´ë”ê°€ ì´ë¯¸ ì¡´ì¬");
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
 		}
 
-		// ÆÄÀÏ »èÁ¦
+		// íŒŒì¼ ì‚­ì œ
 //		{
 //			Path file = Paths.get("C:\\Niotest\\temp\\text.txt");
 //			try {
 //				Files.delete(file);
-//				System.out.println("ÆÄÀÏ »èÁ¦");
+//				System.out.println("íŒŒì¼ ì‚­ì œ");
 //			} catch (NoSuchFileException e) {
-//				System.out.println("ÆÄÀÏÀÌ ¾øÀ½");
+//				System.out.println("íŒŒì¼ì´ ì—†ìŒ");
 //			} catch (IOException e) {
 //
 //				e.printStackTrace();
@@ -57,22 +57,22 @@ public class Test {
 //
 //		}
 
-		// Æú´õ»èÁ¦
+		// í´ë”ì‚­ì œ
 //		{
 //			Path folder = Paths.get("C:\\Niotest\\sub");
 //			try {
 //				Files.delete(folder);
-//				System.out.println("Æú´õ »èÁ¦");
+//				System.out.println("í´ë” ì‚­ì œ");
 //			} catch (NoSuchFileException e) {
-//				System.out.println("ÆÄÀÏÀÌ ¾ø½À´Ï´Ù.");
+//				System.out.println("íŒŒì¼ì´ ì—†ìŠµë‹ˆë‹¤.");
 //			} catch (DirectoryNotEmptyException e) {
-//				System.out.println("Æú´õ°¡ ºñ¾îÀÖÁö ¾Ê½À´Ï´Ù");
+//				System.out.println("í´ë”ê°€ ë¹„ì–´ìˆì§€ ì•ŠìŠµë‹ˆë‹¤");
 //			} catch (IOException e) {
 //				e.printStackTrace();
 //			}
 //		}
 
-		// ÆÄÀÏ ,Æú´õ È®ÀÎ
+		// íŒŒì¼ ,í´ë” í™•ì¸
 		{
 			Path file = Paths
 					.get("C:" + File.separator + "Niotest" + File.separator + "temp" + File.separator + "test.txt");
@@ -84,16 +84,16 @@ public class Test {
 			System.out.println(Files.isDirectory(folder));
 
 			System.out.println(Files.isReadable(file));
-			System.out.println(Files.isReadable(folder));// is °è¿­ ¸Å¿ì ¸¹À½
+			System.out.println(Files.isReadable(folder));// is ê³„ì—´ ë§¤ìš° ë§ìŒ
 
 		}
 
-		// ÆÄÀÏ ¾²±â
+		// íŒŒì¼ ì“°ê¸°->ë®ì–´ì“°ê¸°(ì²˜ìŒë¶€í„°)
 		{
 			Path file = Paths
 					.get("C:" + File.separator + "Niotest" + File.separator + "temp" + File.separator + "test.txt");
 
-			String content = "¾È³çÇÏ¼¼¿ä";
+			String content = "ì•ˆë…•í•˜ì„¸ìš”";
 			try {
 				Files.write(file, content.getBytes());
 			} catch (IOException e) {
@@ -101,6 +101,9 @@ public class Test {
 			}
 
 		}
+
+		// í•´ê²° ë°©ë²• :append!
+		// bufferê°™ì€ ê³³ì— ë¬¸ìì—´ ì™•ì°½ ì§‘ì–´ë„£ê³  ì €ì¥í•  ìˆ˜ëŠ” ìˆëŠ”ë° ë©”ëª¨ë¦¬ ë¶€ë‹´ í¼
 
 	}
 
