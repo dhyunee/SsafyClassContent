@@ -84,7 +84,6 @@ public class BoxOfficeSaxParser extends DefaultHandler {
 
     }
     
-    
     @Override
     public void characters(char[] ch, int start, int length) throws SAXException {
     	this.content=new String(ch,start,length);
