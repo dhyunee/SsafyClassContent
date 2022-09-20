@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="mb-3 mt-3 d-flex justify-content-cneter">
+            <h1>SSAFY</h1>
+        </div>
+        <div class="mb-3">
+            <h2>Login</h2>
+            <label for="userEmail" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="userEmail" placeholder="이메일을 입력하세요" value="ssafy@ssafy.com">
+          </div>
+          <div class="mb-3">
+            <label for="userPassword" class="form-label">Password</label>
+            <input type="password" class="form-control" id="userPassword" placeholder="비밀번호를 입력하세요" value="1234"></input>
+          </div>
+          <div>
+            <button type="button" id="btnLogin" class="btn btn-primary">로그인</button>
+          </div>
+          <div>
+            <a hreg="/BoardWebAjaxJson/jsp/register.jsp" class="btn btn-success">회원가입</a>
+          </div>
+    </div>
+
+    <script>
+      window.onload=function(){
+        document.querySelector("#btnLogin").onclick=function(){
+          let userEmailValue=document.querySelector("#userEmail").value;
+          let userPasswordValue=document.querySelector("#userPassword").value;
+
+          //유효성 검사
+          if(validate()){
+            alert("valid");
+            login();
+          }else{
+            alert('아이디 또는 패스워드를 확인하세요.');
+          }
+        }
+        
+        function validate(){
+          let isUserEmailValid=false;
+          let isUserPasswordValid=false;
+
+          let userEmailValue=document.querySelector("#userEmail").value;
+          if(userEmailValue.length>0){
+            isUserEmailValid=true;
+          }
+
+          let userPasswordValue=document.querySelector("#userPassword").value;
+          if(userPasswordValue.length>0){
+            isUserPasswordValid=true;
+          }
+
+          if(isUserEmailValid&&isUserPasswordValid){
+            return true;
+          }
+          return false;
+        }
+
+        function login(){
+
+        }
+      }
+
+    </script>
+
+</body>
+</html>
