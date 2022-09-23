@@ -181,8 +181,7 @@ contextPath = request.getContextPath(); %>
 
       document.querySelector("#btnRegister").onclick()=function(){
         if(document.querySelectorAll("form .is-invalid").length>0){
-          alert("입력이 올바르지 않습니다.")
-
+          alert("입력이 올바르지 않습니다.");
         }
        register();
       }
