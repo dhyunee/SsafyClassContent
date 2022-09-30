@@ -20,3 +20,4 @@ for( codeDto: codeList){
 <input type="radio" value<%=codeDto.getCode() %>><%=codeDto.getCodeName() %>
 </body>
 </html>
+
