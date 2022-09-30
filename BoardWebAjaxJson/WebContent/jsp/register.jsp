@@ -179,7 +179,7 @@ contextPath = request.getContextPath(); %>
         else return false;
       }
 
-      document.querySelector("#btnRegister").onclick()=function(){
+      document.querySelector("#btnRegister").onclick=function(){
         if(document.querySelectorAll("form .is-invalid").length>0){
           alert("입력이 올바르지 않습니다.");
         }
@@ -219,6 +219,7 @@ contextPath = request.getContextPath(); %>
         }
         // fetch(url,Option);
       }
+      
     </script>
   </body>
 </html>

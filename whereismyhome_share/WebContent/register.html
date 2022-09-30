@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>로그인</title>
+    <meta charset="utf-8" />
+    <link
+      href="https://fonts.googleapis.com/earlyaccess/notosanskr.css"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        box-sizing: border-box;
+        font-family: "Noto Sans KR", sans-serif;
+        border-radius: 5px;
+      }
+      body {
+        margin: 0;
+        background-color: #a3afad;
+      }
+
+
+      .login-form {
+        width: 300px;
+        background-color: #eeeff1;
+        margin-right: auto;
+        margin-left: auto;
+        margin-top: 150px;
+        padding: 20px;
+        text-align: center;
+        border: none;
+      }
+
+      .text-field {
+        font-size: 14px;
+        padding: 10px;
+        border: none;
+        width: 260px;
+        margin-bottom: 15px;
+      }
+      .text-name {
+        font-size: 14px;
+        padding: 10px;
+        width: 160;
+        margin-bottom: 15px;
+      }
+      .text-age {
+        font-size: 14px;
+        padding: 10px;
+        width: 95px;
+        margin-bottom: 15px;
+      }
+      .submit-btn {
+        font-size: 14px;
+        margin-top: 7%;
+        border: none;
+        padding: 10px;
+        width: 260px;
+        background-color: #3e5e58;
+        margin-bottom: 20px;
+        color: white;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="login-form">
+      
+            <input
+              type="text"
+              name="email"
+              class="text-field"
+              placeholder="이름"
+            />
+
+            <input
+              type="text"
+              name="email"
+              class="text-field"
+              placeholder="아이디"
+            />
+            <input
+              type="password"
+              name="password"
+              class="text-field"
+              placeholder="비밀번호"
+            />
+            <input
+              type="text"
+              name="email"
+              class="text-field"
+              placeholder="Email"
+            />
+            <input type="submit" value="회원 가입" class="submit-btn"/>
+
+        </div>
+      </div>
+    </div>
+    <script>
+      document.querySelector(".submit-btn").addEventListener("click", () => {
+        alert('회원가입!');
+        window.history.back();
+        
+
+      });
+    </script>
+  </body>
+</html>

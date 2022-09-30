@@ -120,6 +120,7 @@ public class BoardServlet extends HttpServlet {
 		} else {
 			totalCnt = service.boardListSearchWordTotalCnt(searchWord);
 		}
+		
 
 		Gson gson = new Gson();
 		JsonObject jsonObject = new JsonObject();

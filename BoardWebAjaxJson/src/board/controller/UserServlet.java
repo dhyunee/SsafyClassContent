@@ -26,6 +26,8 @@ public class UserServlet extends HttpServlet {
 		String userEmail=request.getParameter("userEmail");
 		String userPassword=request.getParameter("userPassword");
 		
+		System.out.println(userName+ " " + userEmail+" "+ userPassword);
+		
 		UserDto userDto =new UserDto();
 		userDto.setUserName(userName);
 		userDto.setUserEmail(userEmail);
