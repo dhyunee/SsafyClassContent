@@ -1,4 +1,5 @@
-package swea;
+package java_algo.swea;
+
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -14,6 +15,7 @@ public class swea_1249 {
 	public static void main(String[] args) throws Exception{
 		BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
 		int tc=Integer.parseInt(br.readLine());
+		
 		for(int t=1;t<=tc;t++) {
 			n=Integer.parseInt(br.readLine());
 			ans=Integer.MAX_VALUE;
@@ -21,9 +23,9 @@ public class swea_1249 {
 			visited=new boolean[n][n];
 			
 			for(int i=0;i<n;i++) {
-				StringTokenizer st=new StringTokenizer(br.readLine());
+				char []arr=br.readLine().toCharArray();
 				for(int j=0;j<n;j++) {
-					map[i][j]=Integer.parseInt(st.nextToken());
+					map[i][j]=arr[j]-'0';
 				}
 			}
 			visited[0][0]=true;
@@ -37,7 +39,7 @@ public class swea_1249 {
 			ans=Math.min(ans, val);
 			return;
 		}
-		
+		if(val>=ans)return;
 		for(int i=0;i<4;i++) {
 			int ny=y+dy[i];
 			int nx=x+dx[i];
@@ -45,6 +47,7 @@ public class swea_1249 {
 			visited[ny][nx]=true;
 			cal(ny,nx,val+map[ny][nx]);
 			visited[ny][nx]=false;
+		
 		}
 	}
 }
