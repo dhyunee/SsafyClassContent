@@ -129,7 +129,7 @@ public class boj_17471_게리맨더링2 {
 		}
 		select[srcidx] = true;
 		subset(srcidx+1);
-		visited[srcidx] = false;
+		select[srcidx] = false;
 		subset(srcidx + 1);
 
 	}
