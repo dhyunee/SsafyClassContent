@@ -1,0 +1,24 @@
+package com.mycom.myapp;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+public class URLMappingController {
+	@RequestMapping("/hello")
+	public void m1() {
+		System.out.println("/hello");
+	}
+	@RequestMapping("/hello/ssafy")
+	public void m2() {
+		System.out.println("/hello/ssafy");
+	}
+	@RequestMapping(value= {"/url1","/url2"})
+	public void m3() {
+		System.out.println("/url1,url2");
+	}
+	@RequestMapping("/method",method=RequestMethod.GET)
+	public void m2() {
+		System.out.println("/hello/ssafy");
+	}
+}

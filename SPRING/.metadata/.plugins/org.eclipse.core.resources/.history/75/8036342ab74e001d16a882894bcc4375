@@ -1,0 +1,21 @@
+package com.mycom.myapp;
+
+import javax.servlet.http.HttpServletRequest;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+
+@Controller
+public class ParamController {
+	
+	@GetMapping("/param1")//seq param
+	public void m1(HttpServletRequest request) {
+		String seq=request.getParameter("seq");
+		System.out.println(seq);
+	}
+	
+	@GetMapping("/param2")//seq param
+	public void m2(String seq) {
+		System.out.println(seq);
+	}
+}

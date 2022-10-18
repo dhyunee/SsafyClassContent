@@ -1,0 +1,12 @@
+package com.mycom.myapp;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+public class URLMappingController {
+	@RequestMapping("/hello")
+	public void m1() {
+		System.out.println("/hello");
+	}
+}

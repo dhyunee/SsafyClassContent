@@ -1,0 +1,11 @@
+
+public class MyReflection {
+
+	public void aboutMe() {
+		System.out.println("sample class for reflection!");
+	}
+	public int robot(int name) {
+		return name;
+	}
+
+}

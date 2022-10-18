@@ -1,0 +1,18 @@
+package com.mycom.myapp.aspect;
+
+import org.aspectj.lang.annotation.Pointcut;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Component;
+
+//spring에서 내부적으로 관리되어야 하는 컴포넌트
+@Component
+public class LogAspect {
+	private final Logger logger=LoggerFactory.getLogger(this.getClass());
+	
+	//BusinessProcess의 method 에 끼어들려고 한다(Aspect)
+	//Pointcut으로 끼어들 method를 선택
+	//Pointcut 은 method signature를 이용
+	@Pointcut
+	private void logPointCut() {}
+}	

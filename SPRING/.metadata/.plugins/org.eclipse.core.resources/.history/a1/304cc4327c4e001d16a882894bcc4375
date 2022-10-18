@@ -1,0 +1,15 @@
+
+public class ReflectionTest {
+
+	public static void main(String[] args)throws Exception {
+		//내가 직접 MyReflection 클래스를 사용할 경우
+//		MyReflection mr=new MyReflection();
+//		mr.aboutMe();
+		
+		//Spring 이 MyReflection클래스를 사용할 경우
+		String className="MyReflection";
+		Class<?>myclass=Class.forName(className);
+
+	}
+
+}

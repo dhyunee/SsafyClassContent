@@ -1,0 +1,13 @@
+package com.mycom.myapp.aspect;
+
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+public class AspectMain {
+
+	public static void main(String[] args) {
+		
+		ClassPathXmlApplicationContext context=new ClassPathXmlApplicationContext("aspect.xml");
+
+	}
+
+}

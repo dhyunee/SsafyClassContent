@@ -1,0 +1,32 @@
+package com.mycom.myapp.dto;
+
+public class CarDto {
+	private String name2;
+	private int price;
+	private String owner;
+	
+	public String getName() {
+		return name2;
+	}
+	public void setName(String name) {
+		this.name2 = name;
+	}
+	public int getPrice() {
+		return price;
+	}
+	public void setPrice(int price) {
+		this.price = price;
+	}
+	public String getOwner() {
+		return owner;
+	}
+	public void setOwner(String owner) {
+		this.owner = owner;
+	}
+	
+	@Override
+	public String toString() {
+		return "CarDto [name=" + name2 + ", price=" + price + ", owner=" + owner + "]";
+	}
+
+}
