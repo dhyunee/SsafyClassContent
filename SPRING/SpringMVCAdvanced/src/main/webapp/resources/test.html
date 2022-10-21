@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>test</h1>
+	<button id="btnException">controller 예외 발생 async 요청</button>
+	<button id="btnInsert">student Insert</button>
+	<script>
+	window.onload=function(){
+		document.querySelector("#btnException").onclick=async function(){
+			try{
+				let response=await fetch("/myadv/exception");
+				let data=await response.json();
+				
+				if(data.result=="ajax exception"){
+					alert("문제 발생");
+				}
+				console.log(data);
+			}catch(error){
+				console.error(error);
+			}
+		}
+		
+		document.querySelector("#btnInsert").onclick=async function(){
+			let fetchOptions={
+					method:'POST',
+					headers:{
+						'Content-Type':'application/json'
+					},
+					body:JSON.stringify({
+						studentNm: '홍길동',
+						email: 'hongs@ssafy.com',
+						phone: '010-1111-1111'
+					})
+			}
+			try{
+				let response=await fetch("/myadv/students",fetchOptions);
+				let data=await response.json();
+				if(data.result=="ajax exception"){
+					alert("문제 발생");
+				}
+				console.log(data);
+				
+			}catch(error){
+				console.error(error);
+			}
+		}
+	}
+	</script>
+</body>
+</html>
