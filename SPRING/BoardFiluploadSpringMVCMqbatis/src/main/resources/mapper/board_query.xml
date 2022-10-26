@@ -52,7 +52,7 @@
 	
 	
 	<insert id="boardInsert" parameterType="com.mtcom.myboard.dto.BoardDto">
-		insert user_seq,title,content,reg_dt,read_count into board
-		values (#{user_seq}, #{title},#{content},now(),0)
-	</insert>
+    insert into board ( user_seq, title, content, reg_dt, read_count )
+                VALUES ( #{userSeq}, #{title}, #{content}, now(), 0 )
+</insert>
 </mapper>

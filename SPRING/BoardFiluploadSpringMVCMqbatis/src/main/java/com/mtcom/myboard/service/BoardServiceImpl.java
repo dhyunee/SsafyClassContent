@@ -123,20 +123,23 @@ public class BoardServiceImpl implements BoardService {
 	}
 
 	@Override
-	public BoardResultDto boardInsert(BoardParamDto boardParamDto) {
-		BoardResultDto boardResultDto = new BoardResultDto();
+	public BoardResultDto boardInsert(BoardDto boardDto) {
+	    BoardResultDto boardResultDto = new BoardResultDto();
+	    
+	    try {
 
-		try {
-			int ret = dao.boardInsert(boardParamDto);
-			if(ret==1) {//insert 되는 건수
-				boardResultDto.setResult(SUCCESS);
-			}else boardResultDto.setResult(FAIL);
+	        int ret = dao.boardInsert(boardDto); // insert 되는 건수
+	        if( ret == 1 ) {
+	            boardResultDto.setResult(SUCCESS);
+	        }else {
+	            boardResultDto.setResult(FAIL);
+	        }
 
-		} catch (Exception e) {
-			e.printStackTrace();
-			boardResultDto.setResult(FAIL);
-		}
-		return boardResultDto;
+	    }catch(Exception e) {
+	        e.printStackTrace();
+	        boardResultDto.setResult(FAIL);
+	    }
+	    
+	    return boardResultDto;
 	}
-
 }

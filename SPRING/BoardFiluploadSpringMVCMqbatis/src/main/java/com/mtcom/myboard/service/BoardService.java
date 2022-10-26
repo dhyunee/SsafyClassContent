@@ -22,5 +22,5 @@ public interface BoardService {
 	BoardResultDto boardDelete(int boardId);
 	
 	//글 등록
-	BoardResultDto boardInsert(BoardParamDto boardParamDto);
+	BoardResultDto boardInsert(BoardDto boardDto);
 }

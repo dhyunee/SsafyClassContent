@@ -89,19 +89,19 @@ public class BoardController {
 		}
 	}
 	
-	@PostMapping(value = "/boards")
-	private ResponseEntity<BoardResultDto> boardInsert(BoardDto boardDto,HttpSession session) {
-
-		UserDto userDto = (UserDto) session.getAttribute("userDto");
-		BoardParamDto boardParamDto = new BoardParamDto();
-		boardParamDto.setUserSeq(userDto.getUserSeq());
-		BoardResultDto boardResultDto = service.boardInsert(boardParamDto);
-		
-		if (boardResultDto.getResult() == SUCCESS) {
-			return new ResponseEntity<BoardResultDto>(boardResultDto, HttpStatus.OK);
-		} else {
-			return new ResponseEntity<BoardResultDto>(boardResultDto, HttpStatus.INTERNAL_SERVER_ERROR);
-		}
+	@PostMapping(value="/boards")
+	private ResponseEntity<BoardResultDto> boardInsert(BoardDto boardDto, HttpSession session){
+	    // 현재 사용자의 userSeq 를 session 에서 획득, 전달
+	    UserDto userDto = (UserDto) session.getAttribute("userDto");
+	    boardDto.setUserSeq(userDto.getUserSeq());
+	    
+	    BoardResultDto boardResultDto = service.boardInsert(boardDto);
+	    
+	    if( boardResultDto.getResult() == SUCCESS ) {
+	        return new ResponseEntity<BoardResultDto>(boardResultDto, HttpStatus.OK);
+	    }else {
+	        return new ResponseEntity<BoardResultDto>(boardResultDto, HttpStatus.INTERNAL_SERVER_ERROR);
+	    }
 	}
 	
 }

@@ -30,5 +30,5 @@ public interface BoardDao {
 	int boardDelete(int boardId);
 	
 	//글 등록
-	int boardInsert(BoardParamDto boardParamDto);
+	int boardInsert(BoardDto dto);
 }
