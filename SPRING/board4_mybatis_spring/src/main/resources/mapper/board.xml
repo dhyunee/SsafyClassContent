@@ -93,7 +93,6 @@
 		where article_no = #{articleNo}
 	</update>
 	
-	<!-- 삭제 시 파일 먼저 지우고 글 지우기 -->
 	<delete id="deleteFile" parameterType="int">
 		delete from file_info
 		where article_no = #{articleNo}

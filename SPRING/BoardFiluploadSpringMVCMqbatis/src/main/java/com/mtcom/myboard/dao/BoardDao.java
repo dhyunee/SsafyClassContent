@@ -5,6 +5,7 @@ import java.util.List;
 import org.apache.ibatis.annotations.Mapper;
 
 import com.mtcom.myboard.dto.BoardDto;
+import com.mtcom.myboard.dto.BoardFileDto;
 import com.mtcom.myboard.dto.BoardParamDto;
 import com.mtcom.myboard.dto.UserDto;
 
@@ -30,5 +31,7 @@ public interface BoardDao {
 	int boardDelete(int boardId);
 	
 	//글 등록
-	int boardInsert(BoardDto dto);
+	int boardInsert(BoardDto dto);//게시글 등록
+	int boardFileInsert(BoardFileDto dto);//첨부파일 등록
+
 }

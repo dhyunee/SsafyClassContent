@@ -118,16 +118,16 @@
                 <div id="divEditorInsert"></div>
               </div>
               <div class="mb-3">
-              	<div class="form-check">
+                <div class="form-check">
 				  <input class="form-check-input" type="checkbox" value="" id="chkFileUploadInsert">
 				  <label class="form-check-label" for="chkFileUploadInsert">파일 추가</label>
 				</div>
               </div>
               <div class="mb-3" style="display: none;" id="imgFileUploadInsertWrapper">
-              	<input type="file" id="inputFileUploadInsert" multiple >
-              	<div id="imgFileUploadInsertThumbnail" class="thumbnail-wrapper"></div>
-				</div>
-              <button id="btnBoardInsert" type="button" class="btn btn-sm btn-primary float-end">등록</button>
+                <input type="file" id="inputFileUploadInsert" multiple>
+                <div id="imgFileUploadInsertThumbnail" class="thumbnail-wrapper"></div>
+              </div>
+              <button id="btnBoardInsert" type="button" class="btn btn-sm btn-primary float-end" data-bs-dismiss="modal">등록</button>
         </div>            
       </div>
     </div>
@@ -154,7 +154,7 @@
         	</table>
         	
         	<button id="btnBoardUpdateForm" type="button" class="btn btn-sm btn-primary">수정</button>
-        	<button id="btnBoardDeleteConfirm" type="button" class="btn btn-sm btn-warning">삭제</button>
+        	<button id="btnBoardDeleteConfirm" type="button" class="btn btn-sm btn-warning" data-bs-dismiss="modal">삭제</button>
         </div>
 
       </div>
@@ -180,16 +180,16 @@
                 <div id="divEditorUpdate"></div>
               </div>
               <div class="mb-3">
-              	<div class="form-check">
+                <div class="form-check">
 				  <input class="form-check-input" type="checkbox" value="" id="chkFileUploadUpdate">
 				  <label class="form-check-label" for="chkFileUploadUpdate">파일 변경</label>
 				</div>
               </div>
-              <div class="mb-3" style="display:none;" id="imgFileUploadUpdateWrapper">
-              	<input type="file" id="inputFileUploadUpdate" multiple >
-              	<div id="imgFileUploadUpdateThumbnail" class="thumbnail-wrapper"></div>
-				</div>
-              <button id="btnBoardUpdate" type="button" class="btn btn-sm btn-primary float-end">수정</button>
+              <div class="mb-3" style="display: none;" id="imgFileUploadUpdateWrapper">
+                <input type="file" id="inputFileUploadUpdate" multiple>
+                <div id="imgFileUploadUpdateThumbnail" class="thumbnail-wrapper"></div>
+              </div>
+              <button id="btnBoardUpdate" type="button" class="btn btn-sm btn-primary float-end" data-bs-dismiss="modal">수정</button>
         </div>            
       </div>
     </div>
@@ -238,6 +238,12 @@
 			document.querySelector("#titleInsert").value = "";
 			CKEditorInsert.setData("");
 			
+			// 파일 업로드 관련 ui 초기화
+			document.querySelector("#chkFileUploadInsert").checked = false;
+			document.querySelector("#inputFileUploadInsert").value = "";
+			document.querySelector("#imgFileUploadInsertThumbnail").innerHTML = "";
+			document.querySelector("#imgFileUploadInsertWrapper").style.display = "none";
+			
 			let modal = new bootstrap.Modal(
 					document.querySelector("#boardInsertModal")
 			);
@@ -260,10 +266,10 @@
 		// detail modal 닫고 update modal 을 띄운다.
 		let boardId = document.querySelector("#boardDetailModal").getAttribute("data-boardId");
 		document.querySelector("#boardUpdateModal").setAttribute("data-boardId", boardId);
-		
 		document.querySelector("#titleUpdate").value = document.querySelector("#titleDetail").innerHTML;
-		
 		CKEditorUpdate.setData(document.querySelector("#contentDetail").innerHTML);
+		
+		
 		
 		let modalDetail = new bootstrap.Modal(
 							document.querySelector("#boardDetailModal")
@@ -271,7 +277,13 @@
 					console.dir( modalDetail );
 					
 		modalDetail.hide();
-
+		
+		// 파일 업로드 관련 ui 초기화
+		document.querySelector("#chkFileUploadUpdate").checked = false;
+		document.querySelector("#inputFileUploadUpdate").value = "";
+		document.querySelector("#imgFileUploadUpdateThumbnail").innerHTML = "";
+		document.querySelector("#imgFileUploadUpdateWrapper").style.display = "none";
+		
 			let modalUpdate = new bootstrap.Modal(
 					document.querySelector("#boardUpdateModal")
 			);
@@ -302,60 +314,53 @@
 		document.querySelector("#btnLogout").onclick = function(){
 			logout();
 		}
-		
-		//파일 업로드 checkbox
-		document.querySelector("#chkFileUploadInsert").onchange=function(){
-			if(this.checked){
-				document.querySelector("#imgFileUploadInsertWrapper").style.display="block";
-			}else{
-				document.querySelector("#inputFileUploadInsert").value="";
-				document.querySelector("#imgFileUploadInsertWrapper").style.display="none";
-				document.querySelector("#imgFileUploadInsertThumbnail").innerHTML="";
+      	
+		// 파일업로드 CheckBox
+		document.querySelector("#chkFileUploadInsert").onchange = function() {
+			if (this.checked) {
+				document.querySelector("#imgFileUploadInsertWrapper").style.display = "block";
+			} else {
+				document.querySelector("#inputFileUploadInsert").value = "";
+				document.querySelector("#imgFileUploadInsertThumbnail").innerHTML = "";
+				document.querySelector("#imgFileUploadInsertWrapper").style.display = "none";
 			}
 		}
 		
-		
-		//파일 업로드 checkbox
-		document.querySelector("#chkFileUploadUpdate").onchange=function(){
-			if(this.checked){
-				document.querySelector("#imgFileUploadUpdateWrapper").style.display="block";
-			}else{
-				document.querySelector("#inputFileUploadUpdate").value="";
-				document.querySelector("#imgFileUploadUpdateWrapper").style.display="none";
-				document.querySelector("#imgFileUploadUpdateThumbnail").innerHTML="";
+		document.querySelector("#chkFileUploadUpdate").onchange = function() {
+			if (this.checked) {
+				document.querySelector("#imgFileUploadUpdateWrapper").style.display = "block";
+			} else {
+				document.querySelector("#inputFileUploadUpdate").value = "";
+				document.querySelector("#imgFileUploadUpdateThumbnail").innerHTML = "";
+				document.querySelector("#imgFileUploadUpdateWrapper").style.display = "none";
 			}
 		}
 		
-		//thumbnail imate 처리
-		document.querySelector("#inputFileUploadInsert").onchange=function(){
-			const fileArray=Array.from(this.files);//첨부파일 여러 개가 javascript 객체의 배열로 변환
-			fileArray.forEach(file =>{
-				let reader=new FileReader();
-				reader.readAsDataURL(file);//파일을 읽어들인다.
-				reader.onload=function(e){//파일을 다 읽으면
-					let thumbnailHTML=`<img src="\${e.target.result}">`;
-					document.querySelector("#imgFileUploadInsertThumbnail").insertAdjacentHTML("beforeend",thumbnailHTML);
-					
+		// thumbnail image 처리
+		document.querySelector("#inputFileUploadInsert").onchange = function() {
+			const fileArray = Array.from(this.files); // 첨부파일 여러개가 javaScript 객체의 배열로 변환
+			fileArray.forEach(file => {
+				let reader = new FileReader();
+				reader.readAsDataURL(file); // 파일을 읽어들인다.
+				reader.onload = function(e) { // 파일을 다 읽으면
+					let thumbnailHTML = `<img src = "\${e.target.result}">`;
+					document.querySelector("#imgFileUploadInsertThumbnail").insertAdjacentHTML("beforeend", thumbnailHTML);
 				}
-			})
+			});
 		}
 		
-		//thumbnail imate 처리
-		document.querySelector("#inputFileUploadUpdate").onchange=function(){
-			const fileArray=Array.from(this.files);//첨부파일 여러 개가 javascript 객체의 배열로 변환
-			fileArray.forEach(file =>{
-				let reader=new FileReader();
-				reader.readAsDataURL(file);//파일을 읽어들인다.
-				reader.onload=function(e){//파일을 다 읽으면
-					let thumbnailHTML=`<img src="\${e.target.result}">`;
-					document.querySelector("#imgFileUploadUpdateThumbnail").insertAdjacentHTML("beforeend",thumbnailHTML);
-					
+		document.querySelector("#inputFileUploadUpdate").onchange = function() {
+			const fileArray = Array.from(this.files); // 첨부파일 여러개가 javaScript 객체의 배열로 변환
+			fileArray.forEach(file => {
+				let reader = new FileReader();
+				reader.readAsDataURL(file); // 파일을 읽어들인다.
+				reader.onload = function(e) { // 파일을 다 읽으면
+					let thumbnailHTML = `<img src = "\${e.target.result}">`;
+					document.querySelector("#imgFileUploadUpdateThumbnail").insertAdjacentHTML("beforeend", thumbnailHTML);
 				}
 			})
 		}
 	}
-	
-	
 	
 	// CKEditor 초기화
 	async function initCKEditor() {
@@ -538,46 +543,6 @@
          return false;
        }
      
- 		async function boardInsert(){
- 			//기존의 x-www...파라미터 처리 대신 multipart/form-date
- 			let formData=new Formdata();
- 			formData.append("title",document.querySelector("#titleInsert").value);
- 			formData.append("content",CKEditorInsert.getData());
- 			
- 			//file upload
- 			let files=document.querySelector("#inputFileUploadInsert").files;
- 			
- 			//#1
-//  			for(let i=0;i<files.length;i++){
-//  				formData.append("file",files[i]);
-//  			}
- 			
- 			//#2
- 			const fileArray=Array.from(files);
- 			fileArray.forEach(file=>formData.append("file",file));
- 			
- 			let url = "<%= contextPath%>/boards";
- 			
- 		// fetch options
-	         let fetchOptions = {
-	           method: "POST",
-	           body: formData
-	         }
- 		
-	         try{
-		          let response = await fetch( url, fetchOptions);
-		          let data = await response.json(); // json => javascript object <= JSON.parse()
-		          if( data.result == SUCCESS){ // login.jsp => boardMain.jsp 로 페이지 이동 ( 새로운 페이지(html....) 요청)
-		            alertify.success('글이 등록되었습니다.');
-		            boardList();
-		          } else {
-		        	  alertify.error('글 등록 과정에서 오류가 발생했습니다.');
-		          }            	
-		      }catch(error){
-		      	alertify.error('글 등록 과정에서 오류가 발생했습니다.');
-		     }		
- 		}
- 	
 //      async function boardInsert(){
 //      	let title = document.querySelector("#titleInsert").value;
 //          let content = CKEditorInsert.getData();
@@ -608,6 +573,45 @@
 //         }
 
 //     }
+	async function boardInsert() {
+		// 기존의 x-www..  파라미터 처리 대신 multipart/form-data
+		let formData = new FormData();
+		formData.append("title", document.querySelector("#titleInsert").value);
+		formData.append("content", CKEditorInsert.getData());
+		
+		// file upload
+		let files = document.querySelector("#inputFileUploadInsert").files;
+		
+// 		// #1
+// 		for (let i = 0; i < files.length; i++) {
+// 			formData.append("file", files[i]);
+// 		}
+		
+		// #2
+		const fileArray = Array.from(files);
+		fileArray.forEach(file => formData.append("file", file));
+		
+		let url = "<%= contextPath%>/boards";
+		
+		// fetch options
+		let fetchOptions = {
+		  method: "POST",
+		  body: formData
+		}
+		
+		try{
+		    let response = await fetch( url, fetchOptions);
+		    let data = await response.json(); // json => javascript object <= JSON.parse()
+		    if( data.result == SUCCESS){ // login.jsp => boardMain.jsp 로 페이지 이동 ( 새로운 페이지(html....) 요청)
+		      alertify.success('글이 등록되었습니다.');
+		      boardList();
+		    } else {
+		  	  alertify.error('글 등록 과정에서 오류가 발생했습니다.');
+		    }            	
+		}catch(error){
+			alertify.error('글 등록 과정에서 오류가 발생했습니다.');
+		}
+	}
     
     function validateUpdate(){
         // return true / false
@@ -629,49 +633,6 @@
         }
         return false;
     }
-    
-    
-		async function boardUpdate(){
-			let boardId = document.querySelector("#boardUpdateModal").getAttribute("data-boardId");
- 			//기존의 x-www...파라미터 처리 대신 multipart/form-date
- 			let formData=new Formdata();
- 			formData.append("boardId",boardId);
- 			formData.append("title",document.querySelector("#titleUpdate").value);
- 			formData.append("content",CKEditorUpdate.getData());
- 			
- 			//file upload
- 			let files=document.querySelector("#inputFileUploadUpdate").files;
- 			
- 			//#1
-//  			for(let i=0;i<files.length;i++){
-//  				formData.append("file",files[i]);
-//  			}
- 			
- 			//#2
- 			const fileArray=Array.from(files);
- 			fileArray.forEach(file=>formData.append("file",file));
- 			
- 			let url = "<%= contextPath%>/boards"+boardId;
- 			
- 		// fetch options
-	         let fetchOptions = {
-	           method: "POST",
-	           body: formData
-	         }
- 		
-	         try{
-		          let response = await fetch( url, fetchOptions);
-		          let data = await response.json(); // json => javascript object <= JSON.parse()
-		          if( data.result == SUCCESS){ // login.jsp => boardMain.jsp 로 페이지 이동 ( 새로운 페이지(html....) 요청)
-		            alertify.success('글이 등록되었습니다.');
-		            boardList();
-		          } else {
-		        	  alertify.error('글 수정 과정에서 오류가 발생했습니다.');
-		          }            	
-		      }catch(error){
-		      	alertify.error('글 수정 과정에서 오류가 발생했습니다.');
-		     }		
- 		}
     
 //     async function boardUpdate(){
 //     	let boardId = document.querySelector("#boardUpdateModal").getAttribute("data-boardId");
@@ -705,7 +666,49 @@
 //         }
 
 //     }
-    
+	async function boardUpdate() {
+		let boardId = document.querySelector("#boardUpdateModal").getAttribute("data-boardId");
+		
+		// 기존의 x-www..  파라미터 처리 대신 multipart/form-data
+		let formData = new FormData();
+		formData.append("boardId", boardId);
+		formData.append("title", document.querySelector("#titleUpdate").value);
+		formData.append("content", CKEditorUpdate.getData());
+		
+		// file upload
+		let files = document.querySelector("#inputFileUploadUpdate").files;
+		
+	//		// #1
+	//		for (let i = 0; i < files.length; i++) {
+	//			formData.append("file", files[i]);
+	//		}
+		
+		// #2
+		const fileArray = Array.from(files);
+		fileArray.forEach(file => formData.append("file", file));
+		
+		let url = "<%= contextPath%>/boards/" + boardId;
+		
+		// fetch options
+		let fetchOptions = {
+		  method: "POST",
+		  body: formData
+		}
+		
+		try{
+		    let response = await fetch( url, fetchOptions);
+		    let data = await response.json(); // json => javascript object <= JSON.parse()
+		    if( data.result == SUCCESS){ // login.jsp => boardMain.jsp 로 페이지 이동 ( 새로운 페이지(html....) 요청)
+		      alertify.success('글이 수정되었습니다.');
+		      boardList();
+		    } else {
+		  	  alertify.error('글 수정 과정에서 오류가 발생했습니다.');
+		    }            	
+		}catch(error){
+			alertify.error('글 수정 과정에서 오류가 발생했습니다.');
+		}
+	}
+	
     async function boardDelete(){
     	let boardId = document.querySelector("#boardDetailModal").getAttribute("data-boardId");
 
@@ -746,35 +749,6 @@
         }
     }
     
-    async function boardInsert(){
-        let title = document.querySelector("#titleInsert").value;
-        let content = CKEditorInsert.getData();
-
-        // parameter 
-        let urlParams = new URLSearchParams({
-          title: title,
-          content: content
-        });
-        // fetch options
-        let fetchOptions = {
-          method: "POST",
-          body: urlParams
-        }
-
-        let url = "<%= contextPath%>/boards";
-        try{
-            let response = await fetch( url, fetchOptions);
-            let data = await response.json(); // json => javascript object <= JSON.parse()
-            if( data.result == SUCCESS){ // login.jsp => boardMain.jsp 로 페이지 이동 ( 새로운 페이지(html....) 요청)
-              alertify.success('글이 등록되었습니다.');
-              boardList();
-            }else {
-                alertify.error('글 등록 과정에서 오류가 발생했습니다.');
-            }                
-        }catch(error){
-            alertify.error('글 등록 과정에서 오류가 발생했습니다.');
-        }
-    }
 </script>
 </body>
 

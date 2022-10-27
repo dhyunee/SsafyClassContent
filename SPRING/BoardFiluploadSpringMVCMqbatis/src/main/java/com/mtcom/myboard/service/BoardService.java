@@ -2,6 +2,8 @@ package com.mtcom.myboard.service;
 
 import java.util.List;
 
+import org.springframework.web.multipart.MultipartHttpServletRequest;
+
 import com.mtcom.myboard.dto.BoardDto;
 import com.mtcom.myboard.dto.BoardParamDto;
 import com.mtcom.myboard.dto.BoardResultDto;
@@ -22,5 +24,5 @@ public interface BoardService {
 	BoardResultDto boardDelete(int boardId);
 	
 	//글 등록
-	BoardResultDto boardInsert(BoardDto boardDto);
+	BoardResultDto boardInsert(BoardDto boardDto, MultipartHttpServletRequest request);
 }

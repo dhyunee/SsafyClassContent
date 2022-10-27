@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import com.mtcom.myboard.dto.BoardDto;
 import com.mtcom.myboard.dto.BoardParamDto;
@@ -90,12 +91,13 @@ public class BoardController {
 	}
 	
 	@PostMapping(value="/boards")
-	private ResponseEntity<BoardResultDto> boardInsert(BoardDto boardDto, HttpSession session){
+	private ResponseEntity<BoardResultDto> boardInsert(BoardDto boardDto, MultipartHttpServletRequest request ){
 	    // 현재 사용자의 userSeq 를 session 에서 획득, 전달
+		HttpSession session=request.getSession();
 	    UserDto userDto = (UserDto) session.getAttribute("userDto");
 	    boardDto.setUserSeq(userDto.getUserSeq());
 	    
-	    BoardResultDto boardResultDto = service.boardInsert(boardDto);
+	    BoardResultDto boardResultDto = service.boardInsert(boardDto,request);
 	    
 	    if( boardResultDto.getResult() == SUCCESS ) {
 	        return new ResponseEntity<BoardResultDto>(boardResultDto, HttpStatus.OK);

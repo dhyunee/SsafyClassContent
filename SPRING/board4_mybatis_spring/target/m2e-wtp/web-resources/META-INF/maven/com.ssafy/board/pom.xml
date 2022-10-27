@@ -78,7 +78,6 @@
 			<artifactId>aspectjweaver</artifactId>
 			<version>${org.aspectj-version}</version>
 		</dependency>	
-
 		
 		<!-- Logging -->
 		<dependency>

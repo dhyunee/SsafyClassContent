@@ -23,6 +23,11 @@
 	
 	<context:component-scan base-package="com.mtcom.myboard.controller,com.mtcom.myboard.common,com.mtcom.myboard.config" />
 	
+	<!-- multipart request 처리를 위해 필요 -->
+<beans:bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+    <beans:property name="maxUploadSize" value="10485760" />
+</beans:bean>
+	
 	<!-- interceptor -->
 		<!-- 어느 interceptor 에 어떤 url mapping을 적용 --> 
 	<!-- 여러 개의 interceptor 를 지정 -->

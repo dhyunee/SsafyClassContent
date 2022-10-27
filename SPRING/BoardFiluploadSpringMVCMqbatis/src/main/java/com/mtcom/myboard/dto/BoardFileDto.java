@@ -4,7 +4,7 @@ import java.time.LocalDateTime;
 
 public class BoardFileDto {
 	private int fielId;
-	private int baordId;
+	private int boardId;
 	private String fileName;
 	private long fileSize;
 	private String fileContentType;
@@ -18,11 +18,11 @@ public class BoardFileDto {
 	public void setFielId(int fielId) {
 		this.fielId = fielId;
 	}
-	public int getBaordId() {
-		return baordId;
+	public int getboardId() {
+		return boardId;
 	}
-	public void setBaordId(int baordId) {
-		this.baordId = baordId;
+	public void setboardId(int boardId) {
+		this.boardId = boardId;
 	}
 	public String getFileName() {
 		return fileName;
@@ -57,7 +57,7 @@ public class BoardFileDto {
 	
 	@Override
 	public String toString() {
-		return "BoardFileDto [fielId=" + fielId + ", baordId=" + baordId + ", "
+		return "BoardFileDto [fielId=" + fielId + ", boardId=" + boardId + ", "
 				+ (fileName != null ? "fileName=" + fileName + ", " : "") + "fileSize=" + fileSize + ", "
 				+ (fileContentType != null ? "fileContentType=" + fileContentType + ", " : "")
 				+ (fileUrl != null ? "fileUrl=" + fileUrl + ", " : "") + (regDt != null ? "regDt=" + regDt : "") + "]";
