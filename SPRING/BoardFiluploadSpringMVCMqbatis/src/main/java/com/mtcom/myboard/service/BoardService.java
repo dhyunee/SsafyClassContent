@@ -18,7 +18,7 @@ public interface BoardService {
 	BoardResultDto boardDetail(BoardParamDto boardParamDto);
 	
 	//글 수정
-	BoardResultDto boardUpdate(BoardDto boardDto);
+	BoardResultDto boardUpdate(BoardDto boardDto,MultipartHttpServletRequest request);
 	
 	//글 삭제
 	BoardResultDto boardDelete(int boardId);

@@ -9,6 +9,8 @@ import javax.servlet.http.HttpSession;
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.HandlerInterceptor;
 
+import com.google.gson.Gson;
+import com.google.gson.JsonObject;
 import com.mtcom.myboard.dto.UserDto;
 
 @Component
@@ -32,18 +34,40 @@ public class LoginInterceptor implements HandlerInterceptor{
 		//return true;
 		
 		//#2 login
-		HttpSession session=request.getSession();
-		UserDto userDto=(UserDto)session.getAttribute("userDto");
+//		HttpSession session=request.getSession();
+//		UserDto userDto=(UserDto)session.getAttribute("userDto");
 		
 		//login상태
 		//async에 대한 처리 미구현!!
+//		if(userDto==null) {
+//			response.sendRedirect("/myboard/login");
+//			return false;//미통과 //단지 return false만 하면 아무런 반응 X
+//			
+//		}
+//		return true;//통과
+		
+		
+		//#3 page 요청과 async 요청에 대한 처리를 따로 구성
+		
+		//async 요청인지 확인
+		String async=request.getHeader("async");//client가 담아서 보내야 함.
+		HttpSession session=request.getSession();
+		UserDto userDto=(UserDto)session.getAttribute("userDto");
+		
 		if(userDto==null) {
-			response.sendRedirect("/myboard/login");
-			return false;//미통과 //단지 return false만 하면 아무런 반응 X
-			
+			//나눠서 처리
+			if("true".equals(async)) {
+				//json으로 session timeout=>login page로 이동하라는 내용을 만들어서 보낸다.
+				Gson gson=new Gson();
+				JsonObject jsonObject=new JsonObject();
+				jsonObject.addProperty("result", "login");
+				String jsonStr=gson.toJson(jsonObject);
+				response.getWriter().write(jsonStr);
+			}else {
+				response.sendRedirect("/myboard/login");
+			}
+			return false;
 		}
-		return true;//통과
-		
-		
+		return true;
 	}
 }

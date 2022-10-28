@@ -67,9 +67,9 @@ public class BoardController {
 	//파일 업로드 기능이 추가되면서 어차피 POST 요청으로 수정 요청 처리 해야 함<= 파일업로드 기능 자체가 PUT Request로 되지 않음
 	//그래서 POST로 그대로 구현
 	@PostMapping(value = "/boards/{boardId}")
-	private ResponseEntity<BoardResultDto> boardUpdate(BoardDto boardDto) {
+	private ResponseEntity<BoardResultDto> boardUpdate(BoardDto boardDto, MultipartHttpServletRequest request) {
 
-		BoardResultDto boardResultDto = service.boardUpdate(boardDto);
+		BoardResultDto boardResultDto = service.boardUpdate(boardDto,request);
 		
 		if (boardResultDto.getResult() == SUCCESS) {
 			return new ResponseEntity<BoardResultDto>(boardResultDto, HttpStatus.OK);
