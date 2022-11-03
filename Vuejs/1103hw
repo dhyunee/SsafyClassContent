@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<script
+			type="text/javascript"
+			async
+			src="https://tenor.com/embed.js"
+		></script>
+	</head>
+	<body>
+		<div id="app">
+			<h2>게임 목록</h2>
+			<ul>
+				<li v-for="game in gameList">{{ game.title }}</li>
+			</ul>
+
+			<h2>평점 4점 이상 게임 순위</h2>
+			<ul>
+				<li v-for="(game, index) in recommendedGames">
+					{{ index + 1 }}위 {{ game.title }} - {{ game.score }} / 5
+				</li>
+			</ul>
+
+			<h2>v-if & v-bind</h2>
+			<div
+				v-if="show"
+				class="tenor-gif-embed"
+				data-postid="25650609"
+				data-share-method="host"
+				data-aspect-ratio="1.0356"
+				:data-width="imgSize"
+			></div>
+		</div>
+
+		<script>
+			let games = [
+				{ title: "LostArk", score: "4.3" },
+				{ title: "LeagueOfLegend", score: "4.0" },
+				{ title: "Diable", score: "3.7" },
+				{ title: "PathOfExile", score: "4.5" },
+				{ title: "MapleStory", score: "1.7" },
+				{ title: "BlackDesert", score: "4.7" },
+			];
+
+			games.sort(function (a, b) {
+				return b.score - a.score;
+			});
+
+			new Vue({
+				el: "#app",
+				data() {
+					return {
+						gameList: games,
+						show: true,
+						imgSize: "300px",
+					};
+				},
+				computed: {
+					recommendedGames() {
+						return this.gameList.filter((e) => e.score >= 4.0);
+					},
+				},
+			});
+		</script>
+	</body>
+</html>
