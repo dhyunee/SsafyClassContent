@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Vue Directive v-bind</title>
+  </head>
+  <style>
+    #picture {
+      width: 100px;
+    }
+  </style>
+  <body>
+    <div id="app1">
+      <h4>input Text</h4>
+      <input type="text" v-model="inputText" />
+
+      <h4>TextArea</h4>
+      <textarea v-model="textArea" cols="30" row="10"></textarea>
+
+      <!--한 개는 true/flase-->
+      <h4>CheckBox</h4>
+      <input type="checkbox" v-model="checkboxValue" id=""></input>
+
+      <h4>CheckBoxMultiple</h4>
+      <input type="checkbox" v-model="checkboxValueList" value="J" id="java"><label></label for="java">Java</input>
+      <input type="checkbox" v-model="checkboxValueList" value="S" id="spring"><label></label for="spring">Spring</input>
+      <input type="checkbox" v-model="checkboxValueList" value="V" id="vue"><label></label for="vue">Vue</input>
+        
+      <!--보여지는 거 여러 개, 선택되는 건 한 개--> 
+      <h4>Radio</h4>  
+      <input type="radio" value="F" v-model="radioValue" id="football"><label></label for="football">football</input>
+      <input type="radio" value="B" v-model="radioValue" id="baseball"><label></label for="baseball">baseball</input>
+      
+      <h4>Select 1</h4>
+      <select v-model="selectValue">
+        <option value="C" >Camping</option>
+        <option value="S" >Singing</option>
+        <option value="D" >Drawing</option>
+      </select>
+
+      <h4>Select Multiple</h4>
+      <select  v-model="selectValueList" multiple>
+        <option value="C">Camping</option>
+        <option value="S">Singing</option>
+        <option value="D">Drawing</option>
+      </select>
+   
+    </div>
+
+    <script>
+      const vue = new Vue({
+        el: "#app1",
+        data: function () {
+          return {
+            //input text
+            inputText: "12345",
+            //textarea
+            textArea: "내용을 담는 textarea",
+            //checkbox
+            checkboxValue:false,
+            checkboxValueList:['S','V'],
+            //radio
+            radioValue:'F',
+            //select
+            selectValue:'C',
+            //select multiple
+            selectValueList:['C','S']
+          };
+        },
+      });
+    </script>
+  </body>
+</html>

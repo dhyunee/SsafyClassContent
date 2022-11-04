@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Vue Directive v-bind</title>
+  </head>
+  <style>
+    #picture {
+      width: 100px;
+    }
+  </style>
+  <body>
+    <div id="app1">
+      <h4>select</h4>
+      <select name="" id="" v-model="selectValue" @change="changeSelect">
+        <option v-for="(option,index) in selectOprionList" :key="index" :value="option.value">
+          {{option.text}}
+        </option>
+      </select>
+
+      <h4>Table</h4>
+      <table>
+        <thead>
+          <th>번호</th>
+          <th>제목</th>
+          <th>작성자</th>
+        </thead>
+        <tbody>
+          <tr
+            v-for="(item,index) in trList"
+            :key="index"
+            @click="clickTr(item.no)"
+            style="cursor: pointer"
+          >
+            <td>{{item.no}}</td>
+            <td>{{item.title}}</td>
+            <td>{{item.writer}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <script>
+      let itemList = [
+        { no: 1, title: "안녕하세요", writer: "SSAFY" },
+        { no: 2, title: "vue 학습하세요", writer: "부울경3반" },
+        { no: 3, title: "spring도요", writer: "삐따기" },
+      ];
+      const vue = new Vue({
+        el: "#app1",
+        data: function () {
+          return {
+            selectOprionList: [
+              { text: "Camping", value: "C" },
+              { text: "Drawing", value: "D" },
+              { text: "Singing", value: "S" },
+            ],
+            selectValue: "D",
+            trList: itemList,
+          };
+        },
+        methods: {
+          changeSelect() {
+            alert(this.selectValue);
+          },
+          clickTr(no) {
+            alert(no);
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

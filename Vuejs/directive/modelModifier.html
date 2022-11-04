@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Vue Directive v-bind</title>
+  </head>
+  <style>
+    #picture {
+      width: 100px;
+    }
+  </style>
+  <body>
+    <div id="app1">
+      <h4>Lazy</h4>
+      <!--글자 한 개 한 개 바뀔 때마다 =>전체 입력이 끝나면 (lose focus) 양방향 바인딩-->
+      <input type="text" v-model.lazy="lazytext" />{{lazytext}}
+
+      <h4>Number</h4>
+      <!--숫자만 입력 처리-->
+      <input type="text" v-model.number="numberText" />{{numberText}}
+
+      <h4>Trim</h4>
+      <!--양쪽 끝의 whitespace 제거-->
+      <input type="text" v-model.trim="trimText" />{{'>>>>>'+trimText+'<<<<<'}}
+    </div>
+
+    <script>
+      const vue = new Vue({
+        el: "#app1",
+        data: function () {
+          return {
+            lazytext: "안녕",
+            numberText: "",
+            trimText: "",
+          };
+        },
+      });
+    </script>
+  </body>
+</html>

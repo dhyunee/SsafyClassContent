@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Vue Directive v-bind</title>
+  </head>
+  <style>
+    #picture {
+      width: 100px;
+    }
+  </style>
+  <body>
+    <div id="app1">
+      <!--Vue 객체 밲의 일반 변수 또느 function을 사용 못함 alert도 안됨-->
+      <button v-on:click="OuterCount+=1">OuterCount++</button>
+      <button v-on:click="alert(1)">Alert</button>
+      <br />
+      <button v-on:click="count+=1">count++</button>
+      <button v-on:click="myAlert(1)">Alert</button>
+      <br />
+      <button v-on:click="sayCount(count)">say count</button>{{countMessage}}
+      <button v-on:click="sayCount2()">say no param count</button>{{countMessage}}
+
+      <br />
+      <div v-on:mouseover="mouseMessage='마우스 over'" @mouseout="mouseMessage='마우스 out'">
+        {{mouseMessage}}
+      </div>
+      <!--event 객체를 파라미터로 받아서 사용할 때는 메소드 호출시 ()X (e)X Method O-->
+      <input type="text" v-on:keyup="showKey" placeholder="아무키나 입력하세요." />
+      <br />
+      <!--enter key-->
+      <input type="text" v-on:keydown.13="enterKey" placeholder="EnterKey 입력하세요." />
+      <br />
+      <!--multi key-->
+      <input type="text" v-on:keydown="multiKey" placeholder="ctrl-v 등 테스트하세요." />
+    </div>
+
+    <script>
+      var OuterCount = 0;
+      const vue = new Vue({
+        el: "#app1",
+        data: function () {
+          return {
+            count: 0,
+            countMessage: "",
+            mouseMessage: "마우스를 올려보세요",
+          };
+        },
+        methods: {
+          myAlert: function (param) {
+            alert(param);
+          },
+          sayCount: function (count) {
+            this.countMessage = count + "번 클릭했습니다.";
+          },
+          sayCount2: function () {
+            this.countMessage = this.count + "번 클릭했습니다.";
+          },
+          showKey: function (e) {
+            alert(e.key + " : " + e.keyCode);
+          },
+          enterKey: function (e) {
+            alert("EnterKey!!!");
+          },
+          multiKey: function (e) {
+            //ctrl-v
+            if (e.keyCode == 86 && e.ctrlKey) alert("ctrl-v");
+            //ctr-shift-delete
+            if (e.keyCode == 46 && e.ctrlKey && e.shiftKey) alert("ctrl-shift-delete");
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

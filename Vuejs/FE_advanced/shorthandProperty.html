@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //축약형 property
+      let name = "홍길동";
+      let phone = "010-1111-1111";
+      let age = 20;
+
+      let person = {
+        name: name,
+        phone: phone,
+        age: age,
+      };
+      console.log(person);
+
+      //shorthand property
+      let person2 = {
+        name,
+        phone,
+        age,
+      };
+      console.log(person2);
+
+      let person3 = {
+        name,
+        phone,
+        age,
+        address: "my address",
+      };
+      console.log(person3);
+    </script>
+  </body>
+</html>

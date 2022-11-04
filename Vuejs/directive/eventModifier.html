@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Vue Directive v-bind</title>
+  </head>
+  <style>
+    #picture {
+      width: 100px;
+    }
+  </style>
+  <body>
+    <div id="app1">
+      <!--입력값이 없으면 default action을 취소하고 싶음-->
+      <!--event modifier를 사용 X, 직접 e.preventDefault를 호출-->
+      <form action="http://www.naver.com" target="_blank">
+        <input type="text" v-model="inputTest" />
+        <button type="submit" v-on:click="callSubmit">전송</button>
+      </form>
+
+      <!--event modifier를 사용 =>일단 browser의 기본 action을 막고 callsubmit2호출-->
+      <form @submit.prevent="callSubmit2" action="http://www.naver.com" target="_blank" id="form2">
+        <input type="text" v-model="inputTest2" />
+        <button type="submit">전송</button>
+      </form>
+
+      <!--event modifier를 사용 =>일단 browser의 기본 action을 막고 callsubmit2호출-->
+      <form @submit.prevent="callSubmit3" id="form3">
+        <input type="text" v-model="inputTest3" />
+        <button type="submit">전송</button>
+      </form>
+    </div>
+
+    <script>
+      var OuterCount = 0;
+      const vue = new Vue({
+        el: "#app1",
+        data: function () {
+          return {
+            inputTest: "",
+            inputTest2: "",
+            inputTest3: "",
+          };
+        },
+        methods: {
+          callSubmit: function (e) {
+            console.log("callSubmit is called");
+            if (this.inputTest == "") {
+              e.preventDefault();
+            }
+          },
+
+          callSubmit2: function (e) {
+            console.log("callSubmit2 is called");
+            if (this.inputTest2 != "") {
+              //전송
+              document.querySelector("#form2").submit();
+            }
+          },
+
+          callSubmit3: function (e) {
+            console.log("callSubmit3 is called");
+            if (this.inputTest3 != "") {
+              //전송
+              let form3 = document.querySelector("#form3");
+              document.target = "_blank";
+              form3.action = "http://www.naver.com";
+              form3.submit();
+            }
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

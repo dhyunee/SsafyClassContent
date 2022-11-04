@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Vue Directive v-bind</title>
+  </head>
+  <style>
+    #picture {
+      width: 100px;
+    }
+  </style>
+  <body>
+    <div id="app1">
+      <input
+        type="text"
+        @keyup="keyHandler"
+        @keyup.enter="enterKey"
+        @keyup.page-down="pageDown"
+        @keyup.delete="deleteKey"
+      />
+      <br />
+      <span>Key Code:{{keycode}}</span>
+      <br />
+
+      <input type="text" @input="keyHangul=$event.target.value" @keyup="hangul" />
+      <br />
+      <span>Key Code:{{keycode}}</span>
+    </div>
+
+    <script>
+      const vue = new Vue({
+        el: "#app1",
+        data: function () {
+          return {
+            keycode: 0,
+            keyHangul: "",
+          };
+        },
+        methods: {
+          keyHandler(e) {
+            console.log(e.key);
+            this.keycode = e.key;
+          },
+
+          enterKey() {
+            console.log("enter key");
+          },
+
+          pageDown() {
+            console.log("pageDown");
+          },
+
+          deleteKey() {
+            console.log("deleteKey");
+          },
+
+          hangul() {
+            console.log(this.keyHangul);
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Vue Directive v-bind</title>
+  </head>
+  <style>
+    #picture {
+      width: 100px;
+    }
+  </style>
+  <body>
+    <div id="app1">
+      <!--양방향 바인딩-->
+      <!--v-bind, v-on-->
+      <input type="text" v-bind:value="inputTest" v-on:input="updateInput" />
+      {{inputTest}}
+      <br />
+      <!--v-model-->
+      <input type="text" v-model="inputTest2" />
+      {{inputTest2}}
+    </div>
+
+    <script>
+      var OuterCount = 0;
+      const vue = new Vue({
+        el: "#app1",
+        data: function () {
+          return {
+            inputTest: "12345",
+            inputTest2: "6789",
+          };
+        },
+        methods: {
+          updateInput: function (e) {
+            this.inputTest = e.target.value;
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

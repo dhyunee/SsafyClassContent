@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //// Rest Operator( 나머지 항목을 받아 준다. ) ...왼쪽
+      // {
+      //   let obj = { a: 1, b: 2, c: 3 };
+      //   let obj2 = obj;
+      //   console.log(obj2);
+      //   obj.b = 4;
+      //   console.log(obj2); //obj2.b도 4임
+      // }
+
+      // {
+      //   let obj = { a: 1, b: 2, c: 3 };
+      //   let { ...obj2 } = obj; //새로운 객체  생성==복사해서 저장
+      //   console.log(obj2);
+      //   obj.b = 4;
+      //   console.log(obj2); //obj2.b=2
+      // }
+
+      // {
+      //   let obj = { a: 1, b: 2, c: 3, d: "4" };
+      //   let { a, b, ...obj2 } = obj; //새로운 객체  생성==복사해서 저장,//property 명을 이용
+      //   console.log(a, b, obj2); //a=1, b=2, obj2=c:3,d:"4"
+      // }
+
+      // {
+      //   let arr = ["a", "b", "c", "d", "e"];
+      //   let [c, d, ...arr2] = arr; //index 이용
+      //   console.log(c, d, arr2); //c="a",d="b", arr2=['c','d','e']
+      // }
+
+      //// Spread Operator( 묶여 있는 항목을 펼친다. )....가 오른쪽
+      // {
+      //   let s1 = { name: "홍길동", phone: "010-1111-2222", age: 30 };
+      //   let s2 = { phone: "010-2222-2222", age: 20 };
+      //   let s3 = { phone: "010-3333-2222" };
+
+      //   let s4 = { ...s1 }; //복사
+      //   console.log(s4);
+      //   // s1.name = "이길동";
+      //   // console.log(s4);
+
+      //   let s5 = { ...s1, ...s3 };//s1을 넣고 s3에 있는 phone은 덮어씀
+      //   console.log(s5);
+      // }
+      {
+        let nums = [1, 2, 3, 4, 5];
+        let nums2 = [3, 4, 5, 6, 7];
+        let nums3 = [...nums2, ...nums]; // 두 배열이 앞에 것부터 합쳐진다.
+        console.log(nums3); //[3, 4, 5, 6, 7, 1, 2, 3, 4, 5]
+      }
+    </script>
+  </body>
+</html>

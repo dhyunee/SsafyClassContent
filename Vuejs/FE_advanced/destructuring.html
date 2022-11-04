@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      {
+        let numbers = [0, 1, 2, 3, 4];
+        let a = numbers[0];
+        let b = numbers[1];
+        let c = numbers[2];
+        let d = numbers[3];
+        let e = numbers[4];
+      }
+
+      // {
+      //   let numbers = [0, 1, 2, 3, 4];
+      //   // let a, b, c, d, e;
+      //   // [a, b, c, d, e] = numbers;
+      //   //구조분해할당
+      //   let [a, b, c, d, e] = numbers; //배열의 구조를 분해(개별항목)해서 왼쪽 변수에 순서대로 할당
+      //   console.log(b);
+      //   console.log(d);
+      // }
+
+      // {
+      //   let text = "hello";
+      //   let [d, e, f] = [...text];
+      //   console.log(d, e, f); //h,e,l
+      //   // let [d, e, f] = [text];
+      //   // console.log(d, e, f); //d=>hello
+      // }
+
+      // {
+      //   let numbers = [0, 1, 2, 3, 4];
+      //   let [a, b, , ...c] = numbers; //skip
+      //   console.log(a, b, c); //a:0,b:1,c:[3,4]
+      // }
+
+      // {
+      //   let a = "hello";
+      //   let b = "world";
+      //   [a, b] = [b, a]; //swapping
+      //   console.log(a, b); //world  hello
+      // }
+
+      // {
+      //   let obj = { name: "홍길동", age: 20, phone: "010-1111-1111" };
+      //   let { name, phone } = obj;
+      //   console.log(name);
+      //   console.log(phone);
+      // }
+
+      // async function getJson() {
+      //   let response = await fetch("./fetchResult.json");
+      //   let data = await response.json();
+      //   console.log(data);
+      //   let members = data.members;
+      //   console.log(members);
+      // }
+
+      async function getJson() {
+        let response = await fetch("./fetchResult.json");
+        //json=>javascript objext인데 이 중에서 원하는 부분만 기져옴:fetchResult.json에서 members만
+        let { members } = await response.json();
+        console.log(members);
+      }
+
+      getJson();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Vue Directive v-bind</title>
+  </head>
+  <style>
+    #picture {
+      width: 100px;
+    }
+  </style>
+  <body>
+    <div id="app1">
+      <!--computed를 {{...}} 안에 사용할 때는 ()를 포함 X, return 결과가 있어야 한다.-->
+      <!--대상이 되는 property의 값이 변경되면 1회 호출, 반복사용되어도 1회 호출 이외에 호출되지 않음-->
+      <!--update되도 1회만 더 호출-->
+
+      <!--property 를 화면에 보여주고 싶은데 일정 정도의 변화가 필요한 상태일 때 사용
+        A 대신 decorate(A) 형태로 조금 더 다른 형태로 변화해서 보여주고 싶을 때 사용
+      -->
+      <div>{{text}}</div>
+      <div>{{reversedText}}</div>
+      <div>{{reversedText}}</div>
+      <div>{{reversedText}}</div>
+
+      <button @click="changeText">changeText</button>
+    </div>
+    <script>
+      const vue = new Vue({
+        el: "#app1",
+        data: function () {
+          return {
+            text: "안녕 vue",
+          };
+        },
+        computed: {
+          reversedText: function () {
+            console.log("reversedText!!!");
+            return this.text.split("").reverse().join("");
+          },
+        },
+        methods: {
+          changeText: function () {
+            this.text = "hello,vue";
+          },
+        },
+        created() {
+          console.log(this);
+        },
+      });
+    </script>
+  </body>
+</html>

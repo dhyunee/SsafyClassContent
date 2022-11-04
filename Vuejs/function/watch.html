@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Vue Directive v-bind</title>
+  </head>
+  <style>
+    #picture {
+      width: 100px;
+    }
+  </style>
+  <body>
+    <div id="app1">
+      <!--watch는 {{}}안에 보여주기 위한 function이 아니다-->
+      <!--대상이 되는 property의 값이 변경되면 1회 호출되고, parameter로 변경전, 변경후 값을 전달-->
+      <!--대상이 되는 property가 update되면 1회 호출-->
+      <!--대상이 변경되면 호출되는 일종의 callback-->
+
+      <!--주요 property의 변경에 대한 event callback-->
+      <div>{{text}}</div>
+      <div>{{reversedText}}</div>
+      <div>{{reversedText}}</div>
+      <div>{{reversedText}}</div>
+
+      <button @click="changeText">changeText</button>
+    </div>
+    <script>
+      const vue = new Vue({
+        el: "#app1",
+        data: function () {
+          return {
+            text: "안녕, vue",
+            reversedText: "",
+          };
+        },
+        watch: {
+          //property text를 모니터링하다가 text가 변경되면 변경 후, 변경 전 값을 전달
+          text: function (newVal, oldVal) {
+            console.log(oldVal, "/", newVal);
+            this.reversedText = this.text.split("").reverse().join("");
+          },
+        },
+        methods: {
+          changeText: function () {
+            this.text = "hello,vue";
+          },
+        },
+        created() {
+          console.log(this);
+        },
+      });
+    </script>
+  </body>
+</html>

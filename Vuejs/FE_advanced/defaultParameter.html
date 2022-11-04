@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //파라미터가 없는 function을 파라미터를 제공해도 오류 X
+      function emptyParam() {
+        console.log("emptyParam is called");
+      }
+      emptyParam(3);
+
+      //파라미터가 2개 있는 경우
+      //파라미터의 수가 맞지 않아도 호출된다.
+      //모자라는 파라미터로 실제 코드는 오류가 발생할 수 있다.
+      function multiply(a, b) {
+        console.log("mutiply is called");
+        return a * b;
+      }
+      console.log(multiply(5, 2));
+      console.log(multiply(5)); //NaN이 발생하지만 호출은 됨
+      console.log(multiply());
+
+      //파라미터의 수가 맞짖 않을 경우, 기본 값(default parameter)이 사용되도록 작성
+      function multiply2(a, b = 2) {
+        console.log("mutiply is called");
+        return a * b;
+      }
+      console.log(multiply2(5, 3));
+      console.log(multiply2(5));
+      console.log(multiply2()); //NaN
+
+      function sayHello(name, message, another = "반갑습니다." + name) {
+        console.log(name, message, another);
+      }
+      sayHello("길동님", "안녕하세요", "잘 지내시죠?");
+      sayHello("길동님", "안녕하세요");
+    </script>
+  </body>
+</html>
