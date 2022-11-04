@@ -1,0 +1,1060 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+      integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+      integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- JavaScript -->
+    <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
+
+    <!-- CSS -->
+    <link
+      rel="stylesheet"
+      href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"
+    />
+    <!-- Default theme -->
+    <link
+      rel="stylesheet"
+      href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/default.min.css"
+    />
+    <!-- Semantic UI theme -->
+    <link
+      rel="stylesheet"
+      href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/semantic.min.css"
+    />
+    <!-- Bootstrap theme -->
+    <link
+      rel="stylesheet"
+      href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/bootstrap.min.css"
+    />
+<script
+	src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
+
+<!-- CSS -->
+<link rel="stylesheet"
+	href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css" />
+<!-- Default theme -->
+<link rel="stylesheet"
+	href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/default.min.css" />
+<!-- Semantic UI theme -->
+<link rel="stylesheet"
+	href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/semantic.min.css" />
+<!-- Bootstrap theme -->
+<link rel="stylesheet"
+	href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/bootstrap.min.css" />
+
+    </head>
+    <style>
+th {
+	position: sticky;
+	top: 0px;
+	background-color: white !important;
+}
+</style>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow">
+      <div class="container">
+        <a class="navbar-brand text-primary fw-bold" href="./index.html">
+          <img src="./img/ssafy_logo.png" alt="" width="60" /> WhereIsMyHome
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="/jsp/notice.jsp"
+                >공지사항</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="/aptList.jsp"
+                >공공데이터검색</a
+              >
+            </li>
+          </ul>
+
+          <!-- 로그인 전 -->
+          <ul class="navbar-nav mb-2 me-2 mb-lg-0">
+            <li class="nav-item">
+              <!-- 회원가입 버튼 -->
+              <button
+                id="REGISTER"
+                type="button"
+                class="btn"
+                data-bs-toggle="modal"
+                data-bs-target="#userRegisterModal"
+              >
+                회원가입
+              </button>
+              <!-- 회원가입 Modal -->
+              <div
+                class="modal fade"
+                id="userRegisterModal"
+                tabindex="-1"
+                aria-labelledby="registerModalLabel"
+                aria-hidden="true"
+              >
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="registerModalLabel">회원가입</h5>
+                      <button
+                        type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Close"
+                      ></button>
+                    </div>
+                    <div class="modal-body">
+                      <div class="mb-3">
+                        <label class="form-label">이름</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="userName"
+                          placeholder="이름을 입력하세요"
+                        />
+                      </div>
+                      <div class="mb-3">
+                        <label class="form-label">비밀번호</label>
+                        <input
+                          type="password"
+                          class="form-control"
+                          id="userPassword"
+                          placeholder="비밀번호를 입력하세요"
+                        />
+                      </div>
+                      <div class="mb-3">
+                        <label class="form-label">비밀번호 확인</label>
+                        <input
+                          type="password"
+                          class="form-control"
+                          id="userPassword2"
+                          placeholder="비밀번호를 다시 입력하세요"
+                        />
+                      </div>
+                      <div class="mb-3">
+                        <label class="form-label">이메일</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="userEmail"
+                          placeholder="이메일을 입력하세요"
+                        />
+                      </div>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-primary" id="btnRegister">
+                        회원가입
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="nav-item">
+              <!-- 로그인 버튼 -->
+              <button
+                id="LOGIN"
+                type="button"
+                class="btn"
+                data-bs-toggle="modal"
+                data-bs-target="#userLoginModal"
+              >
+                로그인
+              </button>
+              <!-- 로그인 Modal -->
+              <div
+                class="modal fade"
+                id="userLoginModal"
+                tabindex="-1"
+                aria-labelledby="loginModalLabel"
+                aria-hidden="true"
+              >
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="loginModalLabel">로그인</h5>
+                      <button
+                        type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Close"
+                      ></button>
+                    </div>
+                    <div class="modal-body">
+                      <div class="mb-3">
+                        <label for="formGroupExampleInput" class="form-label">이메일</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="userLoginEmail"
+                          placeholder="이메일을 입력하세요"
+                          value="admin@ssafy.com"
+                        />
+                      </div>
+                      <div class="mb-3">
+                        <label for="formGroupExampleInput2" class="form-label">비밀번호</label>
+                        <input
+                          type="password"
+                          class="form-control"
+                          id="userLoginPassword"
+                          placeholder="비밀번호를 입력하세요"
+                          value="admin"
+                        />
+                      </div>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-primary" id="btnLogin">로그인</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+
+          <!-- 로그인 후 -->
+          <ul class="navbar-nav mb-2 me-2 mb-lg-0">
+            <!-- 로그아웃 버튼 -->
+            <li class="nav-item">
+              <button type="button" class="btn" id="LOGOUT">로그아웃</button>
+            </li>
+
+            <!-- 마이페이지 버튼 -->
+            <li class="nav-item">
+              <button
+                id="MYPAGE"
+                type="button"
+                class="btn"
+                data-bs-toggle="modal"
+                data-bs-target="#userUpdateModal"
+              >
+                마이페이지
+              </button>
+              <div
+                class="modal fade"
+                id="userUpdateModal"
+                tabindex="-1"
+                aria-labelledby="updateModalLabel"
+                aria-hidden="true"
+              >
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="updateModalLabel">마이페이지</h5>
+                      <button
+                        type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Close"
+                      ></button>
+                    </div>
+                    <div class="modal-body">
+                      <div class="mb-3">
+                        <label for="formGroupExampleInput" class="form-label">이름</label>
+                        <input type="text" class="form-control" id="userUpdateName" readonly />
+                      </div>
+
+                      <div class="mb-3">
+                        <label for="formGroupExampleInput2" class="form-label">이메일</label>
+                        <input type="text" class="form-control" id="userUpdateEmail" readonly />
+                      </div>
+
+                      <div class="mb-3">
+                        <label for="formGroupExampleInput3" class="form-label">비밀번호</label>
+                        <input
+                          type="password"
+                          class="form-control"
+                          id="userUpdatePassword"
+                          placeholder="비밀번호를 입력하세요"
+                        />
+                      </div>
+
+                      <div class="mb-3">
+                        <label for="formGroupExampleInput4" class="form-label">비밀번호 확인</label>
+                        <input
+                          type="password"
+                          class="form-control"
+                          id="userUpdatePassword2"
+                          placeholder="비밀번호를 다시 입력하세요"
+                        />
+                      </div>
+
+<!--                       <div class="mb-3"> -->
+<!--                         <label for="formGroupExampleInput5" class="form-label">가입 날짜</label> -->
+<!--                         <input type="text" class="form-control" id="userUpdateRegdt" readonly /> -->
+<!--                       </div> -->
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-primary" id="btnUpdate">수정</button>
+                      <button type="button" class="btn btn-danger" id="btnDelete">삭제</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="nav-item">
+              <button type="button" class="btn" id="EVMANAGE">이벤트관리</button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+</html>
+
+<div class="container">
+		<div style="height: 70px"></div>
+		<div class="row col-md-12 justify-content-center mb-2">
+			<div class="form-group col-md-2">
+				<select class="form-select bg-secondary text-light" id="sido">
+				</select>
+			</div>
+			<div class="form-group col-md-2">
+				<select class="form-select bg-secondary text-light" id="gugun">
+					<option value="">구군선택</option>
+				</select>
+			</div>
+			<div class="form-group col-md-2">
+				<select class="form-select bg-secondary text-light" id="dong">
+					<option value="">동선택</option>
+				</select>
+			</div>
+			<div class="form-group col-md-2">
+				<button type="button" id="list-btn" class="btn btn-outline-primary">
+					검색</button>
+			</div>
+			<div class="form-group col-md-2">
+                <button type="button" id="list-btn" class="btn btn-outline-primary dijkstra">
+                   	가장 가까운 아파트
+                </button>
+            </div>
+		</div>
+		<div id="aptTable" style="display: none;">
+			<div style="overflow: auto; height: 600px; width: 600px; display: inline-block;">
+				<table id="apt" class="table table-hover text-center">
+					<thead>
+						<tr>
+							<th>아파트이름</th>
+							<th>층</th>
+							<th>면적</th>
+							<th>법정동</th>
+							<th>거래금액</th>
+						</tr>
+					</thead>
+					<tbody id="aptlist"></tbody>
+				</table>
+			</div>
+
+			<div id="map" style="width: 600px; height: 600px; display: inline-block;"></div>
+		</div>
+	</div>
+
+
+	<div class="container">
+
+		<div id="MainImage" class="carousel slide" data-bs-ride="carousel">
+			<div class="carousel-inner">
+				<div class="carousel-item active">
+					<img src="img/carousel1.jpg" class="d-block w-100" alt="...">
+				</div>
+				<div class="carousel-item">
+					<img src="img/carousel2.jpg" class="d-block w-100" alt="...">
+				</div>
+				<div class="carousel-item">
+					<img src="img/carousel3.jpg" class="d-block w-100" alt="...">
+				</div>
+				<div class="carousel-item">
+					<img src="img/carousel4.jpg" class="d-block w-100" alt="...">
+				</div>
+				<div class="carousel-item">
+					<img src="img/carousel5.jpg" class="d-block w-100" alt="...">
+				</div>
+				<div class="carousel-item">
+					<img src="img/carousel6.jpg" class="d-block w-100" alt="...">
+				</div>
+			</div>
+			<button class="carousel-control-prev" type="button"
+				data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+				<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+				<span class="visually-hidden">Previous</span>
+			</button>
+			<button class="carousel-control-next" type="button"
+				data-bs-target="#carouselExampleControls" data-bs-slide="next">
+				<span class="carousel-control-next-icon" aria-hidden="true"></span>
+				<span class="visually-hidden">Next</span>
+			</button>
+		</div>
+
+ 
+<script src="js/util.js"></script>
+
+<script>
+      var loginUserEmail = "";
+			
+      window.onload = function () {
+        
+		/* let userDto= */
+        // 로그인 / 회원가입 / 로그아웃 / 마이페이지 버튼
+		
+		if (sessionStorage.getItem("userEmail") != null) {
+			loginUserEmail = sessionStorage.getItem("userEmail");
+		}
+		
+		console.log(sessionStorage.getItem("userEmail"));
+		console.log(typeof sessionStorage.getItem("userEmail"));
+		console.log(loginUserEmail);
+			
+		if(loginUserEmail != ""){
+			document.querySelector("#REGISTER").style.display = "none";
+			document.querySelector("#LOGIN").style.display = "none";
+			document.querySelector("#LOGOUT").style.display = "inline-block";
+			document.querySelector("#MYPAGE").style.display = "inline-block";
+			if(sessionStorage.getItem("userClsf") === "1"){
+				document.querySelector("#EVMANAGE").style.display = "inline-block";
+			} else {
+				document.querySelector("#EVMANAGE").style.display = "none";
+			}
+		}else{
+			document.querySelector("#REGISTER").style.display = "inline-block";
+			document.querySelector("#LOGIN").style.display = "inline-block";
+			document.querySelector("#LOGOUT").style.display = "none";
+			document.querySelector("#MYPAGE").style.display = "none";
+			document.querySelector("#EVMANAGE").style.display = "none";
+		}
+        //
+        
+        
+        // 로그인 시작
+        document.querySelector("#btnLogin").onclick = function(){
+            let userEmailValue = document.querySelector("#userLoginEmail").value;
+            let userPasswordValue = document.querySelector("#userLoginPassword").value;
+            console.log(userEmailValue);
+            console.log(userPasswordValue);
+
+
+            // 유효성 검사 => POST 전송
+            if(validate()){
+                login();
+            }else{
+                // 유효성 검사 실패 코드
+            }
+        }
+        // 로그인 끝
+        
+        // 로그아웃 confirm
+        document.querySelector('#LOGOUT').onclick = function(){
+			alertify.confirm("정보", "로그아웃 하시겠습니까?", function(){
+				logout();
+			}, function(){ console.log("로그아웃 취소"); });
+	    }
+	   	// 로그아웃 끝 
+       
+        
+        // 회원가입 시작
+//         document.querySelector("#REGISTER").onclick = function(){
+// 	   		registerForm();
+// 	   	}
+        
+        document.querySelector("#userName").focus();
+
+        document.querySelector("#userName").onblur = function(){
+            if(validateUserName(this.value)){
+                this.classList.remove('is-invalid');
+                this.classList.add('is-valid');
+                
+            }else{
+                this.classList.remove('is-valid');
+                this.classList.add('is-invalid');
+                
+            }
+        }
+
+        document.querySelector("#userPassword").onblur = function(){
+            if(validatePassword(this.value)){
+                this.classList.remove('is-invalid');
+                this.classList.add('is-valid');
+
+            }else{
+                this.classList.remove('is-valid');
+                this.classList.add('is-invalid');
+            }
+        }
+
+        document.querySelector("#userPassword2").onblur = function(){
+            if(validatePassword2(this.value)){
+                this.classList.remove('is-invalid');
+                this.classList.add('is-valid');
+
+            }else{
+                this.classList.remove('is-valid');
+                this.classList.add('is-invalid');
+            }
+        }
+
+        document.querySelector("#userEmail").onblur = function(){
+            if(validateEmail(this.value)){
+                this.classList.remove('is-invalid');
+                this.classList.add('is-valid');
+
+            }else{
+                this.classList.remove('is-valid');
+                this.classList.add('is-invalid');
+            }
+        }
+
+
+        
+        document.querySelector("#btnRegister").onclick = function(){
+        	if(document.querySelectorAll("form .is-invalid").length == 0){
+        		regist();
+        	}
+        	else alert("입력을 다시 확인해주세요");
+        }
+        
+        // 회원가입 끝
+        
+
+        document.querySelector("#MYPAGE").onclick = function(){
+        	userDetail();
+        }
+        
+        
+        //시 도 정보 요청
+        getSido();
+        /////////////////onload 변경점 끝///////////////////////////////////////
+        
+        // 회원정보 수정 시작
+        document.querySelector("#btnUpdate").onclick = function(){
+        	updateUser();
+        }
+        // 회원정보 수정 끝
+        
+     	// 회원정보 삭제 시작
+        document.querySelector("#btnDelete").onclick = function(){
+        	deleteUser();
+        }
+        // 회원정보 삭제 끝
+        
+        
+      };
+      
+      
+      
+      var SIDO = '';
+      var GUGUN = '';
+      var DONG = '';
+      // 시도가 바뀌면 구군정보 얻기.
+      document.querySelector("#sido").addEventListener("change",function() {
+    	 SIDO = this.value;
+    	 GUGUN = '';
+    	 DONG = '';
+	   	 getGugun(SIDO);
+	   	 //console.log(digit);
+      });
+      
+      // 구군이 바뀌면 동정보 얻기.
+      document.querySelector("#gugun").addEventListener("change",function() {
+	   	 GUGUN = this.value;
+	   	 DONG = '';
+	   	 getDong(GUGUN);
+	   	 //console.log(digit);
+      });
+      
+   // 동정보 얻기.
+      document.querySelector("#dong").addEventListener("change",function() {
+	   	 DONG = this.value;
+	   	 //console.log(digit);
+      });
+      
+      async function getSido(){
+    	  console.log("/sidoList");
+    	  let response = await fetch("/sidoList" );
+
+          let data = await response.json();
+          
+          //console.log(data);
+          
+          let sido = document.querySelector("#sido");
+          sido.innerHTML = `<option value="">시도선택</option>`;
+          innerHtml = ``;
+          data.forEach(el => {
+        	  innerHtml += `<option value="${el.code}">${el.name}</option>`;
+          });
+          sido.innerHTML += innerHtml;
+      }
+      
+      async function getGugun(sido){
+    	  console.log("/gugunList?sido="+sido);
+    	  let response = await fetch("/gugunList?sido="+sido );
+
+          let data = await response.json();
+          
+          console.log(data);
+          
+          let gugun = document.querySelector("#gugun");
+          gugun.innerHTML = `<option value="">구군선택</option>`;
+          innerHtml = ``;
+          data.forEach(el => {
+        	  innerHtml += `<option value="${el.code}">${el.name}</option>`;
+          });
+          gugun.innerHTML += innerHtml;
+      }
+      
+      async function getDong(gugun){
+    	  console.log("/dongList?gugun="+gugun);
+    	  let response = await fetch("/dongList?gugun="+gugun );
+
+          let data = await response.json();
+          
+          console.log(data);
+          
+          let dong = document.querySelector("#dong");
+          dong.innerHTML = `<option value="">동선택</option>`;
+          innerHtml = ``;
+          data.forEach(el => {
+        	  innerHtml += `<option value="${el.code}">${el.name}</option>`;
+          });
+          dong.innerHTML += innerHtml;
+      }
+      
+
+      
+      async function getList(){
+    	  console.log("/houseList?dong="+DONG);
+    	  let response = await fetch("/houseList?dong="+DONG);
+
+          let data = await response.json();
+          
+          console.log(data.houseList);
+          
+          let aptlist = document.querySelector("#aptlist");
+          
+          innerHtml = ``;
+          
+          var positions = [];
+          data.houseList.forEach(el => {
+        	  innerHtml += `<tr onclick="clickPlace(${el.lat}, ${el.lng})"><td>${el.aptName}</td><td>${el.floor}</td><td>${el.area}</td><td>${el.dong}</td><td>${el.dealAmount}</td><td id="lat" style="display:none">\${el.lat}</td><td id="lng" style="display:none">\${el.lng}</td></tr>`;
+        	  
+        	  var obj = {
+        		        title: el.aptName,
+        		        area: el.area,
+        		        amount: el.dealAmount,
+        		        latlng: new kakao.maps.LatLng(el.lat, el.lng)
+        		    };
+        	  
+        	  positions.push(obj);
+          });
+          aptlist.innerHTML = innerHtml;
+          
+
+          document.querySelector("#aptTable").style.display = "";
+          document.querySelector("#MainImage").style.display = "none";
+          
+          
+      }
+      
+      async function getListFromXML(){
+    	  console.log("/main/list?sido="+SIDO+"&gugun="+GUGUN+"&dong="+DONG);
+    	  let response = await fetch("/aptdeal?sido="+SIDO+"&gugun="+GUGUN+"&dong="+DONG );
+
+          let data = await response.json();
+          
+          console.log(data);
+          
+          let aptlist = document.querySelector("#aptlist");
+          
+          innerHtml = ``
+          
+          var positions = [];
+          data.forEach(el => {
+        	  innerHtml += `<tr onclick="clickPlace(${el.lat}, ${el.lng})"><td>${el.aptName}</td><td>${el.floor}</td><td>${el.area}</td><td>${el.dong}</td><td>${el.dealAmount}</td><td id="lat" style="display:none">${el.lat}</td><td id="lng" style="display:none">${el.lng}</td></tr>`;
+        	  
+        	  var obj = {
+        		        title: el.aptName,
+        		        area: el.area,
+        		        amount: el.dealAmount,
+        		    };
+        	  
+        	  positions.push(obj);
+          });
+          aptlist.innerHTML = innerHtml;
+          
+
+          document.querySelector("#aptTable").style.display = "";
+          
+          console.log(positions);
+			  	
+      }
+      
+      function clickPlace(lat, lng){
+			map.setCenter(new kakao.maps.LatLng(lat, lng)); //지도 생성 및 객체 리턴
+      }
+      
+   		// 인포윈도우를 표시하는 클로저를 만드는 함수입니다 
+      function makeOverListener(map, marker, infowindow) {
+          return function() {
+              infowindow.open(map, marker);
+          };
+      }
+
+      // 인포윈도우를 닫는 클로저를 만드는 함수입니다 
+      function makeOutListener(infowindow) {
+          return function() {
+              infowindow.close();
+          };
+      }
+      
+      // 로그인 시작
+      function validate(){
+                    //return true / false
+                    let isUserEmailValid = false;
+                    let isUserPasswordValid = false;
+    
+                    let userEmailValue = document.querySelector("#userLoginEmail").value;
+                    if(userEmailValue.length > 0){
+                        isUserEmailValid = true;
+                    }
+    
+                    let userPasswordValue = document.querySelector("#userLoginPassword").value;
+                    if(userPasswordValue.length > 0){
+                        isUserPasswordValid = true;
+                    }
+    
+    
+                    if(isUserEmailValid && isUserPasswordValid){
+                        return true;
+                    }
+    
+                    return false;
+                }
+    
+                async function login(){
+                    // validate() 가 true면 return 
+                    // 백엔드로 전송할 데이터 준비
+                    // 비동기요청 + POST
+                    // success => /board/boardMain
+                    // fail => alert
+    
+                    
+                    let userEmail = document.querySelector("#userLoginEmail").value;
+                    let userPassword = document.querySelector("#userLoginPassword").value;
+    
+                    // parameter
+                    let urlParams = new URLSearchParams({
+                        userEmail: userEmail,
+                        userPassword: userPassword
+                    });
+    
+                    // fetch options
+                    let fetchOptions = {
+                        method: "POST",
+                        body: urlParams
+                    }
+    
+                    
+                    let response = await fetch("/login", fetchOptions);
+                    let data = await response.json(); // json => js object <= JSON.parse();
+                    if(data.result == "success"){
+                    	sessionStorage.setItem("userEmail", data.userEmail);
+                    	sessionStorage.setItem("userClsf", data.userClsf);
+                    	window.location.reload();
+                    }else if(data.result == "fail"){
+                    	alertify.error('아이디 또는 패스워드를 확인하세요.');
+                    }
+                
+                    // fetch(url, option)
+                }
+      		// 로그인 종료
+      
+      		// 회원가입 관련 시작
+      
+      		// 회원가입 페이지 생성
+//       	 	async function registerForm(){
+//    				let url = "/user/registerForm";
+   				
+//    				let fetchOptions = {
+//    					method: "POST"
+//    				}
+   				
+//    				console.log("registerForm");
+//    				let response = await fetch(url, fetchOptions);
+//    				let data = await response.json();
+   				
+//    				var mR = document.querySelector("#memberRadio");
+//    				var innerHTML = ``;
+//    				data.forEach(el =>{
+//    					console.log(el);
+//    					innerHTML += `
+// 	   				<div class="form-check" style="display: inline-block;margin-right:1rem">
+// 	   				  <input class="form-check-input" type="radio" name="memberCode" id="memberCode" value= \${el.code}>
+// 	   				  <label class="form-check-label" for="flexRadioDefault1">
+// 	   				    ` + el.codeName + `
+// 	   				  </label>
+// 	   				</div>`;
+//    				});
+   				
+//    				mR.innerHTML = innerHTML;
+//       		}
+      		
+      		// 실제 회원가입
+      		async function regist(){
+            	userName = document.querySelector("#userName").value;
+                userPassword = document.querySelector("#userPassword").value;
+                userEmail = document.querySelector("#userEmail").value;
+//                 userCode = document.querySelector("input[name='memberCode']:checked").value;
+//                 console.log(userCode);
+
+                let urlParams = new URLSearchParams ({
+                    userName: userName,
+                    userPassword: userPassword,
+                    userEmail: userEmail,
+//                     userClsf: userCode
+                });
+
+                let fetchOptions = {
+                method: "POST",
+                body: urlParams
+                }
+
+                let response = await fetch("/users", fetchOptions);
+                let data = await response.json(); // json => js object <= JSON.parse();
+                if(data.result == "success"){ // login.jsp => /jsp/login.jsp 로 페이지 이동 ( 새로운 페이지 요청 )
+                	alertify.alert("Welcome!", "회원가입을 축하드립니다.", function(){
+                		  alertify.message('회원가입 성공');
+                		 window.location.reload();
+                	});
+                	
+                }else if(data.result == "fail"){
+                    alert('아이디 또는 패스워드를 확인하세요.');
+                }
+            }
+
+            function validateUserName(userName){
+                if(userName.length >= 3) return true;
+                return false;
+            }
+
+            function validatePassword(userPassword){
+                var patternEngAtListOne = new RegExp(/[a-zA-Z]+/);// + for at least one
+                var patternSpeAtListOne = new RegExp(/[~!@#$%^&*()_+|<>?:{}]+/);// + for at least one
+                var patternNumAtListOne = new RegExp(/[0-9]+/);// + for at least one
+
+                if( patternEngAtListOne.test( userPassword ) 
+                        && patternSpeAtListOne.test( userPassword )  
+                        && patternNumAtListOne.test( userPassword )
+                        && userPassword.length >= 8
+                ){
+                    return true;
+                }
+                else return false;
+            }
+
+            function validatePassword2(userPassword2) {
+                if (userPassword2 == document.querySelector("#userPassword").value ) return true;
+                else return false;
+            }
+
+            function validateEmail(userEmail){
+                var emailPattern = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
+
+                if(userEmail.match(emailPattern) != null) return true;
+                return false;
+            }
+            
+            // 회원가입 종료
+            
+            // 로그아웃 시작
+            
+            async function logout(){
+				// logout => 백엔드에서 sessin.invalidate();
+				// result => success => login 페이지 이동
+				
+				
+				let url = "/logout";
+				let response = await fetch(url);
+				let data = await response.json();
+			    if(data.result == "success"){ 
+			    	sessionStorage.setItem("userEmail", "");
+                	sessionStorage.setItem("userClsf", "-1");
+			    	window.location.reload();
+			    }else if(data.result == "fail"){
+			        alertify.error("로그아웃 과정에서 오류가 발생했습니다.");
+			    }
+			}
+            
+            // 로그아웃 종료
+            
+            // 회원정보 변경 시작
+            async function updateUser(){
+            	userEmail = document.querySelector("#userUpdateEmail").value;
+                userPassword = document.querySelector("#userUpdatePassword").value;
+                userPassword2 = document.querySelector("#userUpdatePassword2").value;
+				
+                
+                if (validatePassword(userPassword) && userPassword == userPassword2) {
+	                let urlParams = new URLSearchParams ({
+	                    userEmail: userEmail,
+	                    userPassword: userPassword,
+	                });
+	
+	                let fetchOptions = {
+	                method: "PUT",
+	                body: urlParams
+	                }
+	
+	                let response = await fetch("/users/"+loginUserEmail, fetchOptions);
+	                let data = await response.json(); // json => js object <= JSON.parse();
+	                if(data.result == "success"){ // login.jsp => /jsp/login.jsp 로 페이지 이동 ( 새로운 페이지 요청 )
+	                	alertify.alert("Welcome!", "회원정보가 변경되었습니다.", function(){
+	                		  alertify.message('회원정보 변경');
+	                		 window.location.reload();
+	                	});
+	                	
+	                }else if(data.result == "fail"){
+	                    alert('아이디 또는 패스워드를 확인하세요.');
+	                }
+                } else {
+                	alert('비밀번호를 확인해주세요.');
+                }
+                
+            }
+            // 회원정보 변경 끝
+            
+            // 회원정보 삭제 시작
+            async function deleteUser(){
+            	userEmail = document.querySelector("#userUpdateEmail").value;
+            	
+                if (confirm("삭제된 아이디는 되돌릴 수 없습니다. 정말 탈퇴하시겠습니까?")) {
+	                let urlParams = new URLSearchParams ({
+	                    userEmail: userEmail,
+	                });
+	
+	                let fetchOptions = {
+	                method: "DELETE",
+	                body: urlParams
+	                }
+	
+	                let response = await fetch("/users/"+userEmail, fetchOptions);
+	                let data = await response.json(); // json => js object <= JSON.parse();
+	                if(data.result == "success"){ // login.jsp => /jsp/login.jsp 로 페이지 이동 ( 새로운 페이지 요청 )
+	                	alertify.alert("Welcome!", "회원탈퇴가 완료되었습니다.", function(){
+	                		 alertify.message('회원정보 삭제');
+	                		 logout();
+	                	});
+	                	
+	                }else if(data.result == "fail"){
+	                    alert('아이디 또는 패스워드를 확인하세요.');
+	                }
+                }
+            }
+            // 회원정보 삭제 끝
+            
+            document.querySelector('#EVMANAGE').onclick = function(){
+		   		location.href="/eventList.html";
+	   		}
+           	
+
+            function validateUserName(userName){
+                if(userName.length >= 3) return true;
+                return false;
+            }
+            
+            
+            // 유저 정보 받기
+            async function userDetail(){
+
+       			let url = "/users/" + loginUserEmail;
+       			console.log(url);
+       			
+       			try{
+       				let response = await fetch(url);
+       				let detail = await response.json();
+       				
+       				console.log(detail);
+       				let userName = detail.userName;
+       				let userEmail = detail.userEmail;
+//        				let regDt = detail.userRegistDate;
+//     				let regDtStr = makeDateStr(regDt.date.year, regDt.date.month, regDt.date.day, ".");
+    				
+    				console.log(userName);
+    				
+    				document.querySelector('#userUpdateName').value = userName;
+    				document.querySelector('#userUpdateEmail').value = userEmail;
+//     				document.querySelector('#userUpdateRegdt').value = regDtStr;
+    				
+       			}catch( error ){
+       				
+       				console.log(error);
+       				alertify.error('글 상세조회 과정에서 문제가 생겼습니다.');
+       			
+       			}
+            }
+            
+    </script>
+
+
+<script type="text/javascript"
+			src="//dapi.kakao.com/v2/maps/sdk.js?appkey=dd866e41c1b1498e1e788006eecc8be2">
+		</script>
+		<script>
+    		var container = document.getElementById('map'); //지도를 담을 영역의 DOM 레퍼런스
+			var options = { //지도를 생성할 때 필요한 기본 옵션
+				center: new kakao.maps.LatLng(33.450701, 126.570667), //지도의 중심좌표.
+				level: 3 //지도의 레벨(확대, 축소 정도)
+			};
+			
+			var map = new kakao.maps.Map(container, options); //지도 생성 및 객체 리턴
+			
+			var imageSrc = "https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/markerStar.png"; 
+		</script>
+<script>
+			////////////////onload 변경점///////////////////////////////////////////
+	        document.querySelector("#list-btn").onclick = function(){
+	        	getList();
+	        }
+		</script>
+
+    <footer
+			class="navbar navbar-expand-lg navbar-light bg-light container justify-content-end fixed-bottom bottom-0">
+			<div class="row">
+				<ul class="navbar-nav">
+					<li><a href="#" class="nav-link text-secondary">카페소개</a></li>
+					<li><a href="#" class="nav-link text-secondary">개인정보처리방침</a></li>
+					<li><a href="#" class="nav-link text-secondary">이용약관</a></li>
+					<li><a href="#" class="nav-link text-secondary">오시는길</a></li>
+					<li><label class="nav-link text-secondary">&copy;
+							SSAFY Corp.</label></li>
+				</ul>
+			</div>
+		</footer>
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+			crossorigin="anonymous"></script>
+</body>
