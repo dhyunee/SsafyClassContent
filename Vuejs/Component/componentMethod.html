@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Vue Document</title>
+  </head>
+
+  <body>
+    <div id="app">
+      <method-component></method-component>
+    </div>
+    <script>
+      const cmp1 = {
+        template: `
+          <div>
+            <div> 컴포넌트 데이터 & 메소드 :{{data1}} {{func2()}}</div>
+            <button v-on:click="func1">click</button>
+            <button v-on:click="func3">countup</button>
+            <div>{{count}}</div>
+          </div>`,
+        data: function () {
+          return {
+            data1: 200,
+            count: 0,
+          };
+        },
+        methods: {
+          func1() {
+            console.log(this);
+            alert(this.data1);
+          },
+          func2() {
+            return "func2 message";
+          },
+          func3() {
+            this.count++;
+          },
+        },
+      };
+
+      new Vue({
+        el: "#app",
+        components: {
+          "method-component": cmp1,
+        },
+      });
+    </script>
+  </body>
+</html>

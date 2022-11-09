@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/vue-router@3.5.3/dist/vue-router.js"></script>
+    <title>Vue Document</title>
+  </head>
+
+  <body>
+    <div id="app">
+      <h4>Vue Router</h4>
+      <!--link, view-->
+      <p>
+        <router-link to="/main">Main Component</router-link>
+        <router-link to="/login">Login Component</router-link>
+        <router-link to="/board">Board Component</router-link>
+      </p>
+      <router-view> </router-view>
+      <!--복수개 가능-->
+    </div>
+
+    <script>
+      //java script object
+      const MainComponent = { template: `<div>Main</div>` };
+      const LoginComponent = { template: `<div>Login</div>` };
+      const BoardComponent = { template: `<div>Board</div>` };
+      //javascirpt array
+      const routes = [
+        { path: "/main", component: MainComponent },
+        { path: "/login", component: LoginComponent },
+        { path: "/board", component: BoardComponent },
+      ];
+
+      //VueRouter 객체 생성
+      const router = new VueRouter({
+        routes, //shorthand property
+      });
+      new Vue({
+        el: "#app",
+        router, //shorthand property
+      });
+    </script>
+  </body>
+</html>

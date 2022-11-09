@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Vue Document</title>
+  </head>
+
+  <body>
+    <div id="app">
+      <basic-component></basic-component>
+    </div>
+
+    <!--html을 가지고 있지 않음-->
+    <script>
+      // #1
+      //instance 안에 basic-component
+      // new Vue({
+      //   el: "#app",
+      //   components:{
+      //     'basic-component':{
+      //       template:`<div>기본 컴포넌트 1</div>`
+      //     }
+      //   }
+      // });
+
+      // #2
+      //instance 밖에 별도 변수에 template 표현
+      // const basic = {
+      //   template: `<div>기본 컴포넌트 2</div>`,
+      // };
+
+      // new Vue({
+      //   el: "#app",
+      //   components: {
+      //     "basic-component": basic,
+      //   },
+      // });
+
+      // #3 파스칼 표현 + shorthand property
+      const BasicComponent = {
+        template: `<div>기본 컴포넌트 3</div>`,
+      };
+
+      new Vue({
+        el: "#app",
+        components: {
+          BasicComponent,
+          //basicComponent: BasicComponent,
+        },
+      });
+    </script>
+  </body>
+</html>

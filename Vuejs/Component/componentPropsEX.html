@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Vue Document</title>
+  </head>
+
+  <body>
+    <!--제품(이름, 가격) 목록 (캠핑)을 보여주는 component를 만들고
+        할인행사를 진행하기 위해 할인율(0.2)을 부모가 가지고 있는 data로 부터 받아서 
+        최종적으로 제품 이름 , 가격, 할인 가격을 보여주려고 한다
+        할인 가격은 원 가격-원가격*할인율-->
+    <div id="app">
+      <product-list v-bind:parent-data="discountRate"></product-list>
+    </div>
+
+    <!--아래 테이블 tag의 내용을 가지는 html template을 작성-->
+    <!--
+    <table>
+      <thead>
+        <th>제품명</th><th>가격</th><th>할인 가격</th>
+      </thead>
+      <tbody>
+       제품 수만큼 반복 v-for
+        <tr>
+          <td></td><td></td><td></td>
+        </tr>
+      </tbody>
+    </table>
+
+-->
+
+    <script>
+      //be 에서 받은 자료
+      //component의 데이터 구성 소스
+      let productList = [
+        { name: "Tent", price: "50000" },
+        { name: "Table", price: "40000" },
+        { name: "Tarp", price: "30000" },
+      ];
+
+      Vue.component("product-list", {
+        //props, template, data
+        //tempate은 htmkl template
+        //data는 외부변수에 저장 (서버로부터 받았다는 가정)
+        props: ["parentData"],
+        data() {
+          return {
+            productList,
+          };
+        },
+
+        template: `  <table>
+      <thead>
+        <th>제품명</th>
+        <th>가격</th>
+        <th>할인 가격</th>
+      </thead>
+      <tbody>
+        <!--제품 수만큼 반복 v-for-->
+        <tr v-for="(item,index) in productList" v-bind:key="index">
+          <td>{{item.name}}</td>
+          <td>{{item.price}}</td>
+          <td>{{item.price-item.price*parentData}}</td>
+        </tr>
+      </tbody>
+    </table>`,
+      });
+
+      new Vue({
+        el: "#app",
+        data() {
+          return {
+            discountRate: 0.2,
+          };
+        },
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Vue Document</title>
+  </head>
+
+  <body>
+    <div id="app">
+      <my-component1></my-component1>
+      <my-component2></my-component2>
+      <my-component3></my-component3>
+      <my-component4></my-component4>
+    </div>
+    <script>
+      const cmp1 = {
+        template: `<div>첫번째 지역 컴포넌트:{{data1}}</div>`,
+        data: function () {
+          return {
+            data1: 100,
+          };
+        },
+      };
+
+      const cmp2 = {
+        template: `<div>두번째 지역 컴포넌트:{{data2}}</div>`,
+        data: function () {
+          return {
+            data2: cmp1.data().data1,//외부 javascript 변수를 통해서 접근 가능
+          };
+        },
+      };
+
+      //template에 해당하는 html을 body안에 template 태그 이용해서 표현
+      //#id연계
+      new Vue({
+        el: "#app",
+        components: {
+          "my-component1": cmp1,
+          "my-component2": cmp2,
+          "my-component3": {
+            template: `<div>세번째 지역 컴포넌트:{{data3}}</div>`,
+            data: function () {
+              return {
+                data3: 300,
+              };
+            },
+          },
+          "my-component4": {
+            template: `<div>네번째 지역 컴포넌트:{{data4}}</div>`,
+            data: function () {
+              return {
+                data4: 400,
+              };
+            },
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

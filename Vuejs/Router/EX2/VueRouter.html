@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/vue-router@3.5.3/dist/vue-router.js"></script>
+    <title>Vue Document</title>
+  </head>
+
+  <body>
+    <!--bootstrap 5 디자인 적용, router 사용해서 main, login 각각 따로 보이게 처리-->
+    <!--링크를 가진 NavHeader를 component를 -->
+    <div id="app" class="container">
+      <nav-header></nav-header>
+      <!--router에 의해서 제어되는 component가 보이는 영역-->
+      <router-view></router-view>
+    </div>
+    <script type="module">
+      //이곳에 component 만들던지 아니면 import 해야 하는데 이제는 component르 별도의 js로 만들고
+      //import 한다. import 를 가용하려면 strict 모드를 사용 ,type="module"
+
+      //import component
+      import NavHeader from "./components/NavHeader.js";
+      import Main from "./components/Main.js";
+      import Login from "./components/Login.js";
+      //router 적용
+      //대상 main, login
+      //NavHeader는 router에 의해 보이고 안보이고 하는 제어를 받지 않는다.  => html 필요
+      var router = new VueRouter({
+        routes: [
+          { path: "/", component: Main },
+          { path: "/login", component: Login },
+          { path: "/main", component: Main },
+        ],
+      });
+      new Vue({
+        el: "#app",
+        router,
+        components: {
+          NavHeader,
+        },
+      });
+    </script>
+  </body>
+</html>

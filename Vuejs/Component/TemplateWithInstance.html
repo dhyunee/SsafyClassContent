@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Vue Document</title>
+  </head>
+
+  <body>
+    <div id="app">
+      <h4>{{message}}</h4>
+      <!--html을 가지고 있다.-->
+    </div>
+
+    <div id="app2"></div>
+    <!--html을 가지고 있지 않음-->
+    <script>
+      new Vue({
+        el: "#app",
+        data: function () {
+          return {
+            message: "hello vue template",
+          };
+        },
+      });
+
+      //template 속성을 가진 vue instance
+      new Vue({
+        el: "#app2",
+        data: function () {
+          return {
+            message: "hello vue template",
+            desc: "긴 html 설명.................",
+          };
+        },
+        template: `
+          <div>
+            <h4>{{message}}</h4>
+            <p>{{desc}}</p>
+          </div>
+        `,
+      });
+    </script>
+  </body>
+</html>

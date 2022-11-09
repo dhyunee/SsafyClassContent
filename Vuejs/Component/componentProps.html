@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Vue Document</title>
+  </head>
+
+  <body>
+    <div id="app">
+      <child-component my-data="내 props" v-bind:parent-data="message"></child-component>
+    </div>
+
+    <script>
+      //글로벌 컴포넌트
+      Vue.component("child-component", {
+        //template ,data, method + props
+        props: ["myData", "parentData"],
+        template: `<p>child-component {{myvalue}} {{myData}} {{parentData}}</p>`,
+        data() {
+          return {
+            myvalue: 200,
+          };
+        },
+      });
+
+      new Vue({
+        el: "#app",
+        data: function () {
+          return {
+            message: "부모로부터의 메세지",
+          };
+        },
+      });
+    </script>
+  </body>
+</html>

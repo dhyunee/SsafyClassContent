@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Vue Document</title>
+  </head>
+
+  <body>
+    <div id="app">
+      <div-component> </div-component>
+      <div-component> </div-component>
+      <table-component></table-component>
+    </div>
+
+    <template id="div-template">
+      <div>HTML Div Template</div>
+    </template>
+
+    <template id="table-template">
+      <table>
+        <tbody>
+          <tr><td>취미1</td><td>축구</td></tr>
+          <tr><td>취미2</td><td>음악</td></tr>
+          <tr><td>취미3</td><td>영화</td></tr>
+      </tbody>
+    </table>
+    </template>
+    <script>
+
+      Vue.component(
+        'table-component',{
+          template:"#table-template"
+        }
+      )
+      //template에 해당하는 html을 body안에 template 태그 이용해서 표현 
+      //#id연계
+      new Vue({
+        el: "#app",
+        components: {
+          "div-component": {
+            template: `#div-template`,
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

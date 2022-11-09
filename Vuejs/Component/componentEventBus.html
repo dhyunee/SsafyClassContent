@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <product></product>
+      <cart></cart>
+    </div>
+
+    <template id="product">
+      <div>
+        <div>텐트 가격 {{price}} 수량 {{count}}</div>
+        <button @click="addCart">addCart</button>
+      </div>
+    </template>
+
+    <template id="cart">
+      <div>전체 가격 {{totalPrice}} 전체 수량 {{totalCount}}</div>
+    </template>
+    <script>
+      const bus = new Vue(); //event bus
+
+      Vue.component("product", {
+        template: "#product",
+        data() {
+          return {
+            price: 2000,
+            count: 1,
+          };
+        },
+        methods: {
+          addCart() {
+            //alert(1);
+            //event bus에 event를 생성해서 태운다.
+            bus.$emit("addCart", this.price, this.count);
+          },
+        },
+      });
+
+      //addCart Event를 bus로부터 받고 싶다.
+      //컴포넌트가 만들어질 때 bus에 구독 신청
+      Vue.component("cart", {
+        template: "#cart",
+        data() {
+          return {
+            totalPrice: 0,
+            totalCount: 0,
+          };
+        },
+        methods:{
+          updateCart(price,count){
+            this.totalPrice+=price;
+            this.totalCount+=count;
+          }
+        },
+        created: function () {
+          //addCart 이벤트 구독 신청
+          //addCart 이벤트가 발생하면 updateCart를 호출해달라고 요청
+          bus.$on("addCart", this.updateCart);
+        },
+      });
+
+      new Vue({
+        el: "#app",
+      });
+    </script>
+  </body>
+</html>

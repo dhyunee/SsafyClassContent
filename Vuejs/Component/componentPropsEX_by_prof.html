@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <!-- 제품(이름, 가격) 목록 (캠핑) 을 보여주는 Component 를 만들고
+         할인행사를 진행하기 위해 할인율(0.2) 을 부모가 가지고 있는 data 로부터 받아서
+         최종적으로 제품 이름, 가격, 할인 가격을 보여주려고 한다. 
+         할인 가격은 원 가격 - 원 가격 * 할인율 -->
+    <div id="app">
+        <product-list v-bind:discount-rate="discountRateValue"></product-list>
+    </div>
+
+    <!-- 아래 테이블 tag 의 내용을 가지는 html template 을 작성-->
+    <template id="product-list">
+        <table>
+            <thead><th>제품명</th><th>가격</th><th>할인 가격</th></thead>
+            <tbody>
+                <!-- 제품 수만큼 반복 v-for -->
+                <tr v-for="( product, index ) in productList" :key="index">
+                    <td>{{ product.name }}</td>
+                    <td>{{ product.price }}</td>
+                    <td>{{ product.price - discountRate*product.price }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </template>
+
+
+    <script>
+
+        // backend 에서 받은 자료
+        // Component 의 데이터 구성 소스
+        let productList = [
+            { name: 'Tent', price: '40000' },
+            { name: 'Tarp', price: '50000' },
+            { name: 'Table', price: '60000' },
+        ]; 
+
+        Vue.component(
+            'product-list',
+            {
+                // props, template, data
+                // template 은 html template
+                // data 는 외부 변수에 저장 (서버로부터 받았다는 가정)
+                props: ['discountRate'],
+                template: '#product-list',
+                data: function(){
+                    return {
+                        productList // shorthand property
+                    }
+                }
+            }
+        );
+
+        new Vue({
+            el: '#app',
+            data(){
+                return{
+                    discountRateValue: 0.2
+                }
+            }
+        });
+    </script>
+</body>
+</html>
