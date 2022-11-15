@@ -49,10 +49,10 @@
 ></script>
 <script>
 import axios from "axios";
-//import VueDaumMap from "vue-daum-map";
-//import SideInfo from "../components/Apt/SideInfo.vue";
-//import AptSearch from "../components/Apt/AptSearch.vue";
-//import infoDisplay from "../components/Apt/infoDisplay.vue";
+import VueDaumMap from "vue-daum-map";
+import SideInfo from "../components/Apt/SideInfo.vue";
+import AptSearch from "../components/Apt/AptSearch.vue";
+import infoDisplay from "../components/Apt/infoDisplay.vue";
 export default {
   name: "Apt",
   components: { VueDaumMap, SideInfo, AptSearch, infoDisplay },
