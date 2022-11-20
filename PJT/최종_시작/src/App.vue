@@ -1,33 +1,22 @@
 <template>
-  <div>
-    <nav-page></nav-page>
-    <main-page></main-page>
-    <footer-page></footer-page>
-  </div>
+    <div id="app">
+        <header-ui />
+        <router-view></router-view>
+        <footer-ui />
+    </div>
 </template>
 
 <script>
-import FooterPage from "@/components/FooterPage.vue";
-//import MainPage from "@/components/MainPage.vue";
-import NavBar from "@/components/NavBar.vue";
-import MapPage from "@/components/MapPage.vue";
-//import MapPage from "@/components/MapPageFull.vue";
+import HeaderUi from "@/components/common/HeaderUI.vue";
+import FooterUi from "@/components/common/FooterUI.vue";
+
 export default {
-  components: {
-    "footer-page": FooterPage,
-    "main-page": MapPage,
-    "nav-page": NavBar,
-  },
+    name: "App",
+    components: {
+        HeaderUi,
+        FooterUi,
+    },
 };
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
+<style></style>

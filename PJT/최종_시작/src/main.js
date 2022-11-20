@@ -1,8 +1,21 @@
-import Vue from 'vue'
-import App from './App.vue'
+import Vue from "vue";
+import App from "./App.vue";
+import store from "./store";
+import router from "./routers";
 
-Vue.config.productionTip = false
+require("@/assets/css/style.css");
+require("@/assets/css/bootstrap.min.css");
+
+// for bootstrap 5
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap";
+
+Vue.use(router);
+Vue.config.productionTip = false;
 
 new Vue({
-  render: h => h(App),
-}).$mount('#app')
+    router,
+    store,
+
+    render: (h) => h(App),
+}).$mount("#app");
