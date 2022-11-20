@@ -1,0 +1,115 @@
+2022-11-11 09:22:10.613  INFO 10952 --- [restartedMain] ileUploadSpringBootMyBatisVueApplication : Starting BoardFileUploadSpringBootMyBatisVueApplication using Java 1.8.0_192 on DESKTOP-KVCQHCD with PID 10952 (C:\SSAFY\spring\BoardFileUploadSpringBootMyBatisVue\bin\main started by SSAFY in C:\SSAFY\spring\BoardFileUploadSpringBootMyBatisVue)
+2022-11-11 09:22:10.614  INFO 10952 --- [restartedMain] ileUploadSpringBootMyBatisVueApplication : No active profile set, falling back to 1 default profile: "default"
+2022-11-11 09:22:10.639  INFO 10952 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-11-11 09:22:10.639  INFO 10952 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-11-11 09:22:11.314  INFO 10952 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-11-11 09:22:11.326  INFO 10952 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-11-11 09:22:11.326  INFO 10952 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-11-11 09:22:11.374  INFO 10952 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-11-11 09:22:11.374  INFO 10952 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 734 ms
+2022-11-11 09:22:11.837  INFO 10952 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-11-11 09:22:11.856  INFO 10952 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-11-11 09:22:11.863  INFO 10952 --- [restartedMain] ileUploadSpringBootMyBatisVueApplication : Started BoardFileUploadSpringBootMyBatisVueApplication in 1.486 seconds (JVM running for 2.074)
+2022-11-11 09:25:56.386  INFO 10952 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 1 deletion, 0 modifications)
+2022-11-11 09:25:56.557  INFO 10952 --- [Thread-7] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-11-11 09:25:56.664  INFO 10952 --- [restartedMain] ileUploadSpringBootMyBatisVueApplication : Starting BoardFileUploadSpringBootMyBatisVueApplication using Java 1.8.0_192 on DESKTOP-KVCQHCD with PID 10952 (C:\SSAFY\spring\BoardFileUploadSpringBootMyBatisVue\bin\main started by SSAFY in C:\SSAFY\spring\BoardFileUploadSpringBootMyBatisVue)
+2022-11-11 09:25:56.665  INFO 10952 --- [restartedMain] ileUploadSpringBootMyBatisVueApplication : No active profile set, falling back to 1 default profile: "default"
+2022-11-11 09:25:56.843  INFO 10952 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-11-11 09:25:56.844  INFO 10952 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-11-11 09:25:56.844  INFO 10952 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-11-11 09:25:56.853  INFO 10952 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-11-11 09:25:56.853  INFO 10952 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 187 ms
+2022-11-11 09:25:56.965  INFO 10952 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-11-11 09:25:56.972  INFO 10952 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-11-11 09:25:56.975  INFO 10952 --- [restartedMain] ileUploadSpringBootMyBatisVueApplication : Started BoardFileUploadSpringBootMyBatisVueApplication in 0.33 seconds (JVM running for 227.147)
+2022-11-11 09:25:56.976  INFO 10952 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-11-11 09:33:07.567  INFO 10952 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2022-11-11 09:33:07.739  INFO 10952 --- [Thread-13] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-11-11 09:33:07.842  INFO 10952 --- [restartedMain] ileUploadSpringBootMyBatisVueApplication : Starting BoardFileUploadSpringBootMyBatisVueApplication using Java 1.8.0_192 on DESKTOP-KVCQHCD with PID 10952 (C:\SSAFY\spring\BoardFileUploadSpringBootMyBatisVue\bin\main started by SSAFY in C:\SSAFY\spring\BoardFileUploadSpringBootMyBatisVue)
+2022-11-11 09:33:07.843  INFO 10952 --- [restartedMain] ileUploadSpringBootMyBatisVueApplication : No active profile set, falling back to 1 default profile: "default"
+2022-11-11 09:33:08.003  INFO 10952 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-11-11 09:33:08.003  INFO 10952 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-11-11 09:33:08.003  INFO 10952 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-11-11 09:33:08.018  INFO 10952 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-11-11 09:33:08.018  INFO 10952 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 174 ms
+2022-11-11 09:33:08.104  INFO 10952 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-11-11 09:33:08.110  INFO 10952 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-11-11 09:33:08.113  INFO 10952 --- [restartedMain] ileUploadSpringBootMyBatisVueApplication : Started BoardFileUploadSpringBootMyBatisVueApplication in 0.29 seconds (JVM running for 658.226)
+2022-11-11 09:33:08.114  INFO 10952 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-11-11 09:33:29.932  INFO 10952 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2022-11-11 09:33:30.080  INFO 10952 --- [Thread-19] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-11-11 09:33:30.179  INFO 10952 --- [restartedMain] ileUploadSpringBootMyBatisVueApplication : Starting BoardFileUploadSpringBootMyBatisVueApplication using Java 1.8.0_192 on DESKTOP-KVCQHCD with PID 10952 (C:\SSAFY\spring\BoardFileUploadSpringBootMyBatisVue\bin\main started by SSAFY in C:\SSAFY\spring\BoardFileUploadSpringBootMyBatisVue)
+2022-11-11 09:33:30.179  INFO 10952 --- [restartedMain] ileUploadSpringBootMyBatisVueApplication : No active profile set, falling back to 1 default profile: "default"
+2022-11-11 09:33:30.327  INFO 10952 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-11-11 09:33:30.327  INFO 10952 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-11-11 09:33:30.327  INFO 10952 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-11-11 09:33:30.344  INFO 10952 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-11-11 09:33:30.344  INFO 10952 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 164 ms
+2022-11-11 09:33:30.433  INFO 10952 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-11-11 09:33:30.438  INFO 10952 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-11-11 09:33:30.442  INFO 10952 --- [restartedMain] ileUploadSpringBootMyBatisVueApplication : Started BoardFileUploadSpringBootMyBatisVueApplication in 0.28 seconds (JVM running for 680.551)
+2022-11-11 09:33:30.443  INFO 10952 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-11-11 09:33:31.878  INFO 10952 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2022-11-11 09:33:32.045  INFO 10952 --- [Thread-25] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-11-11 09:33:32.131  INFO 10952 --- [restartedMain] ileUploadSpringBootMyBatisVueApplication : Starting BoardFileUploadSpringBootMyBatisVueApplication using Java 1.8.0_192 on DESKTOP-KVCQHCD with PID 10952 (C:\SSAFY\spring\BoardFileUploadSpringBootMyBatisVue\bin\main started by SSAFY in C:\SSAFY\spring\BoardFileUploadSpringBootMyBatisVue)
+2022-11-11 09:33:32.132  INFO 10952 --- [restartedMain] ileUploadSpringBootMyBatisVueApplication : No active profile set, falling back to 1 default profile: "default"
+2022-11-11 09:33:32.258  INFO 10952 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-11-11 09:33:32.259  INFO 10952 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-11-11 09:33:32.259  INFO 10952 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-11-11 09:33:32.272  INFO 10952 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-11-11 09:33:32.272  INFO 10952 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 139 ms
+2022-11-11 09:33:32.350  INFO 10952 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-11-11 09:33:32.355  INFO 10952 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-11-11 09:33:32.359  INFO 10952 --- [restartedMain] ileUploadSpringBootMyBatisVueApplication : Started BoardFileUploadSpringBootMyBatisVueApplication in 0.243 seconds (JVM running for 682.468)
+2022-11-11 09:33:32.359  INFO 10952 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-11-11 09:33:33.756  INFO 10952 --- [RMI TCP Connection(29)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2022-11-11 09:33:33.922  INFO 10952 --- [RMI TCP Connection(29)-127.0.0.1] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-11-11 14:06:32.538  INFO 9972 --- [restartedMain] ileUploadSpringBootMyBatisVueApplication : Starting BoardFileUploadSpringBootMyBatisVueApplication using Java 1.8.0_192 on DESKTOP-KVCQHCD with PID 9972 (C:\SSAFY\spring\BoardFileUploadSpringBootMyBatisVue\bin\main started by SSAFY in C:\SSAFY\spring\BoardFileUploadSpringBootMyBatisVue)
+2022-11-11 14:06:32.539  INFO 9972 --- [restartedMain] ileUploadSpringBootMyBatisVueApplication : No active profile set, falling back to 1 default profile: "default"
+2022-11-11 14:06:32.563  INFO 9972 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-11-11 14:06:32.564  INFO 9972 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-11-11 14:06:33.169  INFO 9972 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-11-11 14:06:33.174  INFO 9972 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-11-11 14:06:33.174  INFO 9972 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-11-11 14:06:33.215  INFO 9972 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-11-11 14:06:33.215  INFO 9972 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 651 ms
+2022-11-11 14:06:33.665  INFO 9972 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-11-11 14:06:33.685  INFO 9972 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-11-11 14:06:33.692  INFO 9972 --- [restartedMain] ileUploadSpringBootMyBatisVueApplication : Started BoardFileUploadSpringBootMyBatisVueApplication in 1.373 seconds (JVM running for 1.909)
+2022-11-11 14:06:42.614  INFO 9972 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-11-11 14:06:42.614  INFO 9972 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-11-11 14:06:42.615  INFO 9972 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-11-11 14:07:03.718  INFO 9972 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2022-11-11 14:07:03.888  INFO 9972 --- [Thread-7] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-11-11 14:07:03.888  INFO 9972 --- [Thread-7] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2022-11-11 14:07:04.006  INFO 9972 --- [restartedMain] ileUploadSpringBootMyBatisVueApplication : Starting BoardFileUploadSpringBootMyBatisVueApplication using Java 1.8.0_192 on DESKTOP-KVCQHCD with PID 9972 (C:\SSAFY\spring\BoardFileUploadSpringBootMyBatisVue\bin\main started by SSAFY in C:\SSAFY\spring\BoardFileUploadSpringBootMyBatisVue)
+2022-11-11 14:07:04.006  INFO 9972 --- [restartedMain] ileUploadSpringBootMyBatisVueApplication : No active profile set, falling back to 1 default profile: "default"
+2022-11-11 14:07:04.176  INFO 9972 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-11-11 14:07:04.177  INFO 9972 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-11-11 14:07:04.177  INFO 9972 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-11-11 14:07:04.185  INFO 9972 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-11-11 14:07:04.186  INFO 9972 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 178 ms
+2022-11-11 14:07:04.280  INFO 9972 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-11-11 14:07:04.287  INFO 9972 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-11-11 14:07:04.290  INFO 9972 --- [restartedMain] ileUploadSpringBootMyBatisVueApplication : Started BoardFileUploadSpringBootMyBatisVueApplication in 0.303 seconds (JVM running for 32.507)
+2022-11-11 14:07:04.291  INFO 9972 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2022-11-11 14:07:08.179  INFO 9972 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-11-11 14:07:08.180  INFO 9972 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-11-11 14:07:08.181  INFO 9972 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-11-11 14:07:08.218  INFO 9972 --- [http-nio-8080-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-11-11 14:07:08.377  INFO 9972 --- [http-nio-8080-exec-2] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-11-11 18:00:37.714  INFO 9972 --- [RMI TCP Connection(290)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2022-11-11 18:00:37.887  INFO 9972 --- [RMI TCP Connection(290)-127.0.0.1] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2022-11-11 18:00:37.889  INFO 9972 --- [RMI TCP Connection(290)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2022-11-11 18:00:37.893  WARN 9972 --- [RMI TCP Connection(290)-127.0.0.1] o.a.c.loader.WebappClassLoaderBase       : The web application [ROOT] appears to have started a thread named [HikariPool-1 housekeeper] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ sun.misc.Unsafe.park(Native Method)
+ java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:215)
+ java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2078)
+ java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1093)
+ java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)
+ java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+ java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+ java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+ java.lang.Thread.run(Thread.java:748)
+2022-11-11 18:00:37.897  INFO 9972 --- [RMI TCP Connection(290)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-11-11 18:00:37.901  INFO 9972 --- [RMI TCP Connection(290)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
