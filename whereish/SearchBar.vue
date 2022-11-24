@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="container">
-      <div class="row g-2">
+      <div class="row g-2" style="max-height: 10vh">
         <div class="col-md-10">
           <div class="row g-2">
             <div class="col-md-4">
